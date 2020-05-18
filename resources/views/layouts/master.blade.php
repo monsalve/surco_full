@@ -80,7 +80,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </router-link>
             </li>
 
-            @can('isAdmin')
+            
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fa fa-cog green"></i>
@@ -108,7 +108,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </p>
                 </router-link>
          </li>
-         @endcan
+         
           <li class="nav-item">
                 <router-link to="/profile" class="nav-link">
                     <i class="nav-icon fas fa-user orange"></i>
@@ -162,7 +162,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       Anything you want
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2014-2018 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    <strong>Desarrollado por <a href="https://fractalagenciadigital.com">Agencia Digital Fractal</a> 2020</strong> 
   </footer>
 </div>
 <!-- ./wrapper -->
