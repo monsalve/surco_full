@@ -46,16 +46,20 @@ class UserController extends Controller
 
         $this->validate($request,[
             'name' => 'required|string|max:191',
+            'apellido' => 'required|string|max:191',
             'email' => 'required|string|email|max:191|unique:users',
             'password' => 'required|string|min:6'
         ]);
 
         return User::create([
             'name' => $request['name'],
+            'apellido' => isset($request['apellido']) ? $request['type'] : '',
+            'tipo_id' => isset($request['tipo_id']) ? $request['type'] : '',
+            'documento' => isset($request['documento']) ? $request['type'] : '',
             'email' => $request['email'],
-            'type' => $request['type'],
-            'bio' => $request['bio'],
-            'photo' => $request['photo'],
+            'type' => isset($request['type']) ? $request['type'] : '' ,
+            'bio' => isset($request['bio']) ? $request['type'] : '',
+            'photo' => isset($request['photo']) ? $request['type'] : '',
             'password' => Hash::make($request['password']),
         ]);
 

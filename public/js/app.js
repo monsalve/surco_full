@@ -68178,7 +68178,7 @@ if (typeof window !== 'undefined' && window.Sweetalert2){  window.swal = window.
 "    .swal2-popup.swal2-toast .swal2-styled:focus {\n" +
 "      box-shadow: 0 0 0 0.0625em #fff, 0 0 0 0.125em rgba(50, 100, 150, 0.4); }\n" +
 "  .swal2-popup.swal2-toast .swal2-success {\n" +
-"    border-color: #a5dc86; }\n" +
+"    border-color: #e7746f; }\n" +
 "    .swal2-popup.swal2-toast .swal2-success [class^='swal2-success-circular-line'] {\n" +
 "      position: absolute;\n" +
 "      width: 2em;\n" +
@@ -68820,7 +68820,7 @@ if (typeof window !== 'undefined' && window.Sweetalert2){  window.swal = window.
 "    border-color: #c9dae1;\n" +
 "    color: #87adbd; }\n" +
 "  .swal2-icon.swal2-success {\n" +
-"    border-color: #a5dc86; }\n" +
+"    border-color: #e7746f; }\n" +
 "    .swal2-icon.swal2-success [class^='swal2-success-circular-line'] {\n" +
 "      position: absolute;\n" +
 "      width: 3.75em;\n" +
@@ -68868,7 +68868,7 @@ if (typeof window !== 'undefined' && window.Sweetalert2){  window.swal = window.
 "      position: absolute;\n" +
 "      height: .3125em;\n" +
 "      border-radius: .125em;\n" +
-"      background-color: #a5dc86;\n" +
+"      background-color: #e7746f;\n" +
 "      z-index: 2; }\n" +
 "      .swal2-icon.swal2-success [class^='swal2-success-line'][class$='tip'] {\n" +
 "        top: 2.875em;\n" +

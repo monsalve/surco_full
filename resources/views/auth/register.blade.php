@@ -1,6 +1,7 @@
-@extends('layouts.app')
+@include('header')
 
-@section('content')
+
+<!--
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -73,5 +74,87 @@
             </div>
         </div>
     </div>
+</div> 
+-->
+
+<div class="site-section ftco-subscribe-1 site-blocks-cover pb-4" style="background-image: url('img/bg_1.jpg')">
+    <div class="container">
+      <div class="row align-items-end justify-content-center text-center">
+        <div class="col-lg-7">
+          <h2 class="mb-0">Registrase</h2>
+          <p>Tenemos una gran variedad de Cursos de Capacitación y Diplomados.</p>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+
+<div class="custom-breadcrumns border-bottom">
+  <div class="container">
+    <a href="index.html">Inicio</a>
+    <span class="mx-3 icon-keyboard_arrow_right"></span>
+    <span class="current">Registro</span>
+  </div>
 </div>
-@endsection
+
+<div class="site-section">
+    <div class="container">
+        <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
+
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-sm-12">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                        </div>
+                        <div class="col-md-6 col-sm-12 form-group">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" id="apellido" class="form-control{{ $errors->has('apellido') ? ' is-invalid' : '' }}">
+                        </div>
+                        <div class="col-md-6 col-sm-12 form-group">
+                            <label for="tipo_id">Tipo de identificación</label>
+                            
+                            <select id="tipo_id" class="form-control ">
+                                <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
+                                <option value="Cedula de Extrangeria">Cedula de Extrangeria</option>
+                                <option value="Pasaporte">Pasaporte</option>
+                                <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 col-sm-12 form-group">
+                            <label for="documento">No. identificación</label>
+                            <input type="text" id="documento" class="form-control ">
+                        </div>
+                        <div class="col-md-6 col-sm-12 form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control ">
+                        </div>
+                        <div class="col-md-6 col-sm-12 form-group">
+                            <label for="pword">Clave</label>
+                            <input type="password" id="pword" class="form-control ">
+                        </div>
+                        <div class="col-md-6 col-sm-12 form-group">
+                            <label for="pword2">Confirmar clave</label>
+                            <input type="password" id="pword2" class="form-control ">
+                        </div>
+                        <div class="col-md-6 col-sm-12 form-group">
+                            <label for="celular">Celular</label>
+                            <input type="tel" id="celular" class="form-control ">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <input type="submit" value="Registrase" class="btn btn-primary btn-lg px-5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+@include('footer')
+

@@ -178,7 +178,7 @@ sup {
 }
 
 a {
-    color: #032f6c;
+    color: #fff;
     text-decoration: none;
     background-color: transparent;
     -webkit-text-decoration-skip: objects
@@ -2675,8 +2675,8 @@ fieldset:disabled a.btn {
 .btn-primary:not(:disabled):not(.disabled):active,
 .show>.btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #3ca060;
-    border-color: #38975a
+    background-color: #d66500;
+    border-color: #d66500
 }
 
 .btn-primary:not(:disabled):not(.disabled).active:focus,
@@ -4898,7 +4898,7 @@ input[type=submit].btn-block {
 
 .navbar-dark .navbar-text a:focus,
 .navbar-dark .navbar-text a:hover {
-    color: #fff
+    color: #d66401
 }
 
 .card {
@@ -5351,7 +5351,7 @@ input[type=submit].btn-block {
 .badge-primary[href]:hover {
     color: #fff;
     text-decoration: none;
-    background-color: #3ca060
+    background-color: #d66500
 }
 
 .badge-secondary {
@@ -6734,7 +6734,7 @@ a.bg-primary:focus,
 a.bg-primary:hover,
 button.bg-primary:focus,
 button.bg-primary:hover {
-    background-color: #3ca060!important
+    background-color: #d66500!important
 }
 
 .bg-secondary {
@@ -9654,7 +9654,7 @@ button.bg-dark:hover {
 
 a.text-primary:focus,
 a.text-primary:hover {
-    color: #3ca060!important
+    color: #d66500!important
 }
 
 .text-secondary {
