@@ -2399,7 +2399,7 @@ select.form-control-lg:not([size]):not([multiple]),
 
 .was-validated .custom-control-input:valid:checked~.custom-control-label::before,
 .custom-control-input.is-valid:checked~.custom-control-label::before {
-    background-color: #34ce57;
+    background-color: #032f6b;
 }
 
 .was-validated .custom-control-input:valid:focus~.custom-control-label::before,

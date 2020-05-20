@@ -178,7 +178,7 @@ sup {
 }
 
 a {
-    color: #fff;
+    color: #032f6b;
     text-decoration: none;
     background-color: transparent;
     -webkit-text-decoration-skip: objects
@@ -2628,8 +2628,8 @@ textarea.form-control {
 .btn.focus,
 .btn:focus {
     outline: 0;
-    -webkit-box-shadow: 0 0 0 0.2rem rgba(81, 190, 120, 0.25);
-    box-shadow: 0 0 0 0.2rem rgba(81, 190, 120, 0.25)
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(3, 68, 158, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(3, 68, 158, 0.25)
 }
 
 .btn.disabled,
