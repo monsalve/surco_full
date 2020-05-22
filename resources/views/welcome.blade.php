@@ -35,7 +35,7 @@
           <div class="row mb-5 justify-content-center text-center">
             <div class="col-lg-4 mb-5">
               <h2 class="section-title-underline mb-5">
-                <span>Why Academics Works</span>
+                <span>Por qué Surcoestudios?</span>
               </h2>
             </div>
           </div>
@@ -47,9 +47,9 @@
                   <span class="flaticon-mortarboard text-white"></span>
                 </div>
                 <div class="feature-1-content">
-                  <h2>Personalize Learning</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi hendrerit elit</p>
-                  <p><a href="#" class="btn btn-primary px-4 rounded-0">Learn More</a></p>
+                  <h2>Aprendisaze a tu ritmo</h2>
+                  <p>Tu defines los horarios y tiempos, la plataforma con todos sus contendidos esta disponible para 24/7.</p>
+                   <!--<p><a href="#" class="btn btn-primary px-4 rounded-0">Learn More</a></p>-->
                 </div>
               </div>
             </div>
@@ -59,9 +59,9 @@
                   <span class="flaticon-school-material text-white"></span>
                 </div>
                 <div class="feature-1-content">
-                  <h2>Trusted Courses</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi hendrerit elit</p>
-                  <p><a href="#" class="btn btn-primary px-4 rounded-0">Learn More</a></p>
+                  <h2>Instructores Certificados</h2>
+                  <p>Todos nuestros instructores son profesionales son profesionales que cumplen con todos los requerimientos ante estado para validar las certificaciones de tus cursos aprobados.</p>
+                  <!--<p><a href="#" class="btn btn-primary px-4 rounded-0">Learn More</a></p>-->
                 </div>
               </div> 
             </div>
@@ -71,9 +71,9 @@
                   <span class="flaticon-library text-white"></span>
                 </div>
                 <div class="feature-1-content">
-                  <h2>Tools for Students</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi hendrerit elit</p>
-                  <p><a href="#" class="btn btn-primary px-4 rounded-0">Learn More</a></p>
+                  <h2>Convenios Empresariales</h2>
+                  <p>Si deseas contratar paquetes educativos para tu empresa, podemos ofrecerte grandes descuentos en nuestros cursos y diplomados</p>
+                   <!--<p><a href="#" class="btn btn-primary px-4 rounded-0">Learn More</a></p>-->
                 </div>
               </div> 
             </div>
@@ -81,172 +81,94 @@
         </div>
       </div>
   
-  
+      <div class="site-section ftco-subscribe-1 site-blocks-cover pb-4" style="background-image: url('img/bg_1.jpg')">
+        <div class="container">
+          <div class="row align-items-end">
+            <div class="col-lg-7">
+              <h2 class="mb-0">Acerca de nostros</h2>
+              <p>Somos Surcoestudio, una entidad educativa, ofrecemos capacitacion, certifiaciones y diplomados.</p>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+      <div class="container pt-5 ">
+        <div class="row">
+          <div class="col-lg-4">
+            <h2 class="section-title-underline">
+              <span>SURCOLOMBIANA DE ESTUDIOS SAS</span>
+            </h2>
+          </div>
+          <div class="col-lg-4">
+            <p>Concibe a la Educación a Distancia como una herramienta complementaria para la formación a todo nivel, interpretando que la educación no presencial es una realidad, tanto en Colombia como a nivel internacional, debido a diferentes factores (sociales, laborales, tecnológicos) que se combinan en un mundo centrado en el conocimiento, en el que los requerimientos de aprendizaje y actualización implican respuestas desde las Instituciones educativas que exceden el modelo clásico de actividades presenciales en el aula.</p>
+          </div>
+          <div class="col-lg-4">
+            <p style="text-align: justify;">El desarrollo de toda Educación a Distancia requiere una combinación de elementos que parten de lo pedagógico, incorporan la tecnología informática, electrónica y de comunicaciones y contiene también componentes propios de la psicología cognitiva y del diseño de interfases hombre-máquina. De esta forma toda persona puede capacitarse de forma permanente utilizando la tecnología. En este mismo camino, se refuerza el trabajo de Surcolombiana de Estudios SAS en pos de la cooperación, el asociativismo y la adopción de nuevas tecnologías informáticas.</p>
+          </div>
+        </div>
+      </div>
       <div class="site-section">
         <div class="container">
-  
-  
-          <div class="row mb-5 justify-content-center text-center">
-            <div class="col-lg-6 mb-5">
-              <h2 class="section-title-underline mb-3">
-                <span>Popular Courses</span>
-              </h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, id?</p>
-            </div>
-          </div>
-  
           <div class="row">
-            <div class="col-12">
-                <div class="owl-slide-3 owl-carousel">
-                    <div class="course-1-item">
-                      <figure class="thumnail">
-                        <a href="course-single.html"><img src="img/course_1.jpg" alt="Image" class="img-fluid"></a>
-                        <div class="price">$99.00</div>
-                        <div class="category"><h3>Mobile Application</h3></div>  
-                      </figure>
-                      <div class="course-1-content pb-4">
-                        <h2>How To Create Mobile Apps Using Ionic</h2>
-                        <div class="rating text-center mb-3">
-                          <span class="icon-star2 text-warning"></span>
-                          <span class="icon-star2 text-warning"></span>
-                          <span class="icon-star2 text-warning"></span>
-                          <span class="icon-star2 text-warning"></span>
-                          <span class="icon-star2 text-warning"></span>
-                        </div>
-                        <p class="desc mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique accusantium ipsam.</p>
-                        <p><a href="course-single.html" class="btn btn-primary rounded-0 px-4">Enroll In This Course</a></p>
-                      </div>
-                    </div>
-        
-                    <div class="course-1-item">
-                      <figure class="thumnail">
-                        <a href="course-single.html"><img src="img/course_2.jpg" alt="Image" class="img-fluid"></a>
-                        <div class="price">$99.00</div>
-                        <div class="category"><h3>Web Design</h3></div>  
-                      </figure>
-                      <div class="course-1-content pb-4">
-                        <h2>How To Create Mobile Apps Using Ionic</h2>
-                        <div class="rating text-center mb-3">
-                          <span class="icon-star2 text-warning"></span>
-                          <span class="icon-star2 text-warning"></span>
-                          <span class="icon-star2 text-warning"></span>
-                          <span class="icon-star2 text-warning"></span>
-                          <span class="icon-star2 text-warning"></span>
-                        </div>
-                        <p class="desc mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique accusantium ipsam.</p>
-                        <p><a href="course-single.html" class="btn btn-primary rounded-0 px-4">Enroll In This Course</a></p>
-                      </div>
-                    </div>
-        
-                    <div class="course-1-item">
-                      <figure class="thumnail">
-                        <a href="course-single.html"><img src="img/course_3.jpg" alt="Image" class="img-fluid"></a>
-                        <div class="price">$99.00</div>
-                        <div class="category"><h3>Arithmetic</h3></div>  
-                      </figure>
-                      <div class="course-1-content pb-4">
-                        <h2>How To Create Mobile Apps Using Ionic</h2>
-                        <div class="rating text-center mb-3">
-                          <span class="icon-star2 text-warning"></span>
-                          <span class="icon-star2 text-warning"></span>
-                          <span class="icon-star2 text-warning"></span>
-                          <span class="icon-star2 text-warning"></span>
-                          <span class="icon-star2 text-warning"></span>
-                        </div>
-                        <p class="desc mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique accusantium ipsam.</p>
-                        <p><a href="courses-single.html" class="btn btn-primary rounded-0 px-4">Enroll In This Course</a></p>
-                      </div>
-                    </div>
-  
-                    <div class="course-1-item">
-                      <figure class="thumnail">
-                          <a href="course-single.html"><img src="img/course_4.jpg" alt="Image" class="img-fluid"></a>
-                        <div class="price">$99.00</div>
-                        <div class="category"><h3>Mobile Application</h3></div>  
-                      </figure>
-                      <div class="course-1-content pb-4">
-                        <h2>How To Create Mobile Apps Using Ionic</h2>
-                        <div class="rating text-center mb-3">
-                          <span class="icon-star2 text-warning"></span>
-                          <span class="icon-star2 text-warning"></span>
-                          <span class="icon-star2 text-warning"></span>
-                          <span class="icon-star2 text-warning"></span>
-                          <span class="icon-star2 text-warning"></span>
-                        </div>
-                        <p class="desc mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique accusantium ipsam.</p>
-                        <p><a href="course-single.html" class="btn btn-primary rounded-0 px-4">Enroll In This Course</a></p>
-                      </div>
-                    </div>
-        
-                    <div class="course-1-item">
-                      <figure class="thumnail">
-                          <a href="course-single.html"><img src="img/course_5.jpg" alt="Image" class="img-fluid"></a>
-                        <div class="price">$99.00</div>
-                        <div class="category"><h3>Web Design</h3></div>  
-                      </figure>
-                      <div class="course-1-content pb-4">
-                        <h2>How To Create Mobile Apps Using Ionic</h2>
-                        <div class="rating text-center mb-3">
-                          <span class="icon-star2 text-warning"></span>
-                          <span class="icon-star2 text-warning"></span>
-                          <span class="icon-star2 text-warning"></span>
-                          <span class="icon-star2 text-warning"></span>
-                          <span class="icon-star2 text-warning"></span>
-                        </div>
-                        <p class="desc mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique accusantium ipsam.</p>
-                        <p><a href="course-single.html" class="btn btn-primary rounded-0 px-4">Enroll In This Course</a></p>
-                      </div>
-                    </div>
-        
-                    <div class="course-1-item">
-                      <figure class="thumnail">
-                          <a href="course-single.html"><img src="img/course_6.jpg" alt="Image" class="img-fluid"></a>
-                        <div class="price">$99.00</div>
-                        <div class="category"><h3>Mobile Application</h3></div>  
-                      </figure>
-                      <div class="course-1-content pb-4">
-                        <h2>How To Create Mobile Apps Using Ionic</h2>
-                        <div class="rating text-center mb-3">
-                          <span class="icon-star2 text-warning"></span>
-                          <span class="icon-star2 text-warning"></span>
-                          <span class="icon-star2 text-warning"></span>
-                          <span class="icon-star2 text-warning"></span>
-                          <span class="icon-star2 text-warning"></span>
-                        </div>
-                        <p class="desc mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique accusantium ipsam.</p>
-                        <p><a href="course-single.html" class="btn btn-primary rounded-0 px-4">Enroll In This Course</a></p>
-                      </div>
-                    </div>
-        
-                </div>
-        
+            <div class="col-lg-12 ml-auto align-self-left">
+              <h2 class="section-title-underline">
+                <span>¿QUIÉNES SOMOS?</span>
+              </h2>
+              <p>Somos una organización privada con sede en Puerto Asís-Putumayo, nació en el año 2012 bajo la idea y en respuesta a la necesidad de acercar e integrar la educación sin importar el lugar donde se encuentre el alumno, hemos desarrollado diferentes diplomados, llevando la educación a toda Colombia y Latinoamérica.
+              </p>
+              <p>Empresa Inscrita según Matrícula Mercantil Nro. 45541-16, con fecha 30 de marzo de 2012 y con licencia de funcionamiento o Resolución Nro. 03 y actualizada según resolución 005 de 30 de noviembre de 2017 del municipio de Puerto Asís-Putumayo.</p>
             </div>
           </div>
-  
-          
-          
         </div>
       </div>
-  
-      
-  
-  
-      <div class="section-bg style-1" style="background-image: url('img/hero_1.jpg');">
+      <div class="site-section">
+        <div class="container">
+          <div class="row ">
+              <div class="col-lg-6 mb-lg-0 mb-4">
+                  <img src="img/course_4.jpg" alt="Image" class="img-fluid"> 
+              </div>
+              <div class="col-lg-5 ml-auto align-self-center">
+                  <h2 class="section-title-underline mb-5">
+                      <span>Misión?</span>
+                  </h2>
+                  <p>Ayudar a empresas, organizaciones, instituciones, profesionales e individuos en el alcance de sus metas de formación, educación y desarrollo. Ofreciendo soluciones de educación a distancia de calidad, adecuadas a sus necesidades.
+                  </p>
+                 
+              </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-6 order-1 order-lg-2 mb-lg-0">
+                <img src="img/course_5.jpg" alt="Image" class="img-fluid"> 
+            </div>
+            <div class="col-lg-5 mr-auto align-self-center order-2 order-lg-1">
+                <h2 class="section-title-underline mb-5">
+                    <span>Visión</span>
+                </h2>
+                <p>Ser reconocidos por nuestros altos niveles de calidad y la excelencia en el desarrollo de nuestros objetivos. En un futuro pretendemos trabajar en altos estándares de calidad de nuestros servicios educativos con alta satisfacción de cada uno de nuestros clientes, ofertando cada vez más y mejor nuestros servicios.</p>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-section">
         <div class="container">
           <div class="row">
-            <div class="col-lg-4">
-              <h2 class="section-title-underline style-2">
-                <span>About Our University</span>
+            <div class="col-lg-12 ml-auto align-self-left">
+              <h2 class="section-title-underline mb-5">
+                <span>Metodología de trabajo</span>
               </h2>
-            </div>
-            <div class="col-lg-8">
-              <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem nesciunt quaerat ad reiciendis perferendis voluptate fugiat sunt fuga error totam.</p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus assumenda omnis tempora ullam alias amet eveniet voluptas, incidunt quasi aut officiis porro ad, expedita saepe necessitatibus rem debitis architecto dolore? Nam omnis sapiente placeat blanditiis voluptas dignissimos, itaque fugit a laudantium adipisci dolorem enim ipsum cum molestias? Quod quae molestias modi fugiat quisquam. Eligendi recusandae officiis debitis quas beatae aliquam?</p>
-              <p><a href="#">Read more</a></p>
+              <p>Somos una organización privada con sede en Puerto Asís-Putumayo, nació en el año 2012 bajo la idea y en respuesta a la necesidad de acercar e integrar la educación sin importar el lugar donde se encuentre el alumno, hemos desarrollado diferentes diplomados, llevando la educación a toda Colombia y Latinoamérica.
+              </p>
+              <p>Empresa Inscrita según Matrícula Mercantil Nro. 45541-16, con fecha 30 de marzo de 2012 y con licencia de funcionamiento o Resolución Nro. 03 y actualizada según resolución 005 de 30 de noviembre de 2017 del municipio de Puerto Asís-Putumayo.</p>
             </div>
           </div>
         </div>
       </div>
+
+      
+      
   
         <!-- // 05 - Block -->
       <div class="site-section">

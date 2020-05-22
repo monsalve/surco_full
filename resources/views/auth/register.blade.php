@@ -1,7 +1,22 @@
 @include('header')
 
-
-<!--
+<div class="site-section ftco-subscribe-1 site-blocks-cover pb-4" style="background-image: url('img/bg_1.jpg')">
+    <div class="container">
+        <div class="row align-items-end justify-content-center text-center">
+            <div class="col-lg-7">
+                <h2 class="mb-0">Registrase</h2>
+                <p>Tenemos una gran variedad de Cursos de Capacitación y Diplomados.</p>
+            </div>
+        </div>
+    </div>
+</div> 
+<div class="custom-breadcrumns border-bottom">
+    <div class="container">
+        <a href="index.html">Inicio</a>
+        <span class="mx-3 icon-keyboard_arrow_right"></span>
+        <span class="current">Registro</span>
+    </div>
+</div>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -75,28 +90,13 @@
         </div>
     </div>
 </div> 
--->
-
-<div class="site-section ftco-subscribe-1 site-blocks-cover pb-4" style="background-image: url('img/bg_1.jpg')">
-    <div class="container">
-      <div class="row align-items-end justify-content-center text-center">
-        <div class="col-lg-7">
-          <h2 class="mb-0">Registrase</h2>
-          <p>Tenemos una gran variedad de Cursos de Capacitación y Diplomados.</p>
-        </div>
-      </div>
-    </div>
-  </div> 
 
 
-<div class="custom-breadcrumns border-bottom">
-  <div class="container">
-    <a href="index.html">Inicio</a>
-    <span class="mx-3 icon-keyboard_arrow_right"></span>
-    <span class="current">Registro</span>
-  </div>
-</div>
 
+
+
+
+<!--
 <div class="site-section">
     <div class="container">
         <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
@@ -155,6 +155,6 @@
         </form>
     </div>
 </div>
-
+-->
 @include('footer')
 

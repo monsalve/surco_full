@@ -85,7 +85,7 @@
                       <a href="index.html" class="nav-link text-left">Inicio</a>
                     </li>
                     <li class="has-children">
-                      <a href="about.html" class="nav-link text-left">Nosotros</a>
+                      <a href="/#nosotros" class="nav-link text-left">Nosotros</a>
                       <ul class="dropdown">
                         <li><a href="teachers.html">Nuestros Instructores</a></li>
                         <li><a href="about.html">Nuestra Institución</a></li>
