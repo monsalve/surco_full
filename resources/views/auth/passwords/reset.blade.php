@@ -1,3 +1,37 @@
+@include('header')
+
+    <div class="site-section ftco-subscribe-1 site-blocks-cover pb-4" style="background-image: url('img/bg_1.jpg')">
+        <div class="container">
+            <div class="row align-items-end justify-content-center text-center">
+                <div class="col-lg-7">
+                    <h2 class="mb-0">Recuperación de correo</h2>
+                    <p>Recupera tu correo para poder inciar sesion en Surcoestudios</p>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+
+    <div class="custom-breadcrumns border-bottom">
+        <div class="container">
+            <a href="/">Inicio</a>
+            <span class="mx-3 icon-keyboard_arrow_right"></span>
+            <span class="current">Restablecer</span>
+        </div>
+    </div>
+
+    <div class="site-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">  
+                          
+                </div>
+            </div>
+        </div>
+    </div>
+            
+@include('footer')
+<!--
 @extends('layouts.app')
 
 @section('content')
@@ -63,3 +97,4 @@
     </div>
 </div>
 @endsection
+-->

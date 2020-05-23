@@ -124,12 +124,12 @@
       <div class="site-section">
         <div class="container">
           <div class="row ">
-              <div class="col-lg-6 mb-lg-0 mb-4">
+              <div class="col-lg-6 mb-lg-0 ">
                   <img src="img/course_4.jpg" alt="Image" class="img-fluid"> 
               </div>
               <div class="col-lg-5 ml-auto align-self-center">
                   <h2 class="section-title-underline mb-5">
-                      <span>Misión?</span>
+                      <span>OBJETIVOS</span>
                   </h2>
                   <p>Ayudar a empresas, organizaciones, instituciones, profesionales e individuos en el alcance de sus metas de formación, educación y desarrollo. Ofreciendo soluciones de educación a distancia de calidad, adecuadas a sus necesidades.
                   </p>

@@ -16,24 +16,24 @@
     
        
         <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
-        <link rel="stylesheet" href="fonts/icomoon/style.css">
+        <link rel="stylesheet" href="/fonts/icomoon/style.css">
     
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/jquery-ui.css">
-        <link rel="stylesheet" href="css/owl.carousel.min.css">
-        <link rel="stylesheet" href="css/owl.theme.default.min.css">
-        <link rel="stylesheet" href="css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/jquery-ui.css">
+        <link rel="stylesheet" href="/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="/css/owl.theme.default.min.css">
     
-        <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+        <link rel="stylesheet" href="/css/jquery.fancybox.min.css">
     
-        <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="/css/bootstrap-datepicker.css">
     
-        <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="/fonts/flaticon/font/flaticon.css">
     
-        <link rel="stylesheet" href="css/aos.css">
-        <link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="/css/aos.css">
+        <link href="/css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
     
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="/css/style.css">
     </head>
     
     <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -53,19 +53,38 @@
         <div class="py-2 bg-light">
           <div class="container">
             <div class="row align-items-center">
-              <div class="col-lg-8 d-none d-lg-block">
+              <div class="col-xl-8 d-none d-lg-block">
                 <a href="#" class="small mr-3"><span class="icon-question-circle-o mr-2"></span> Alguna inquietud?</a> 
                 <a href="#" class="small mr-3"><span class="icon-phone2 mr-2"></span> 320 468 8543</a> 
                 <a href="#" class="small mr-3"><span class="icon-envelope-o mr-2"></span> coordinacion@surcoestudios.com</a> 
               </div>
-              <div class="col-lg-4 text-right">
-                <a href="{{ route('login') }}" class="small mr-3">
-                  <span class="icon-unlock-alt"></span> Iniciar sesión
-                </a>
-                <a href="{{ route('register') }}" class="small btn btn-primary px-4 py-2 rounded-0">
-                  <span class="icon-users"></span> Registrate
-                </a>
-              </div>
+              @guest
+                <div class="col-xl-4 text-right">
+                  <a href="{{ route('login') }}" class="btn btn-outline-primary px-4 py-2 small mr-3 rounded-0">
+                    <span class="icon-unlock-alt"></span> Iniciar sesión
+                  </a>
+                  <a href="{{ route('register') }}" class="small btn btn-primary px-4 py-2 rounded-0">
+                    <span class="icon-users"></span> Registrate
+                  </a>
+                </div>
+              @else
+                <div class="col-xl-4 text-right">
+                  <a href="{{ route('register') }}" class="small btn btn-primary px-4 py-2 rounded-0">
+                    <span class="icon-users"></span> Panel Administrativo
+                  </a>
+                  <a href="/dashboard"           class="btn btn-outline-danger small ml-3 px-4 py-2 rounded-0 " onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <span class="icon-unlock-alt"></span> Salir                    
+                 </a>
+                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+                </form>
+
+                 
+                  
+                </div>
+
+               
+              @endguest
             </div>
           </div>
         </div>
@@ -75,7 +94,7 @@
             <div class="d-flex align-items-center">
               <div class="site-logo">
                 <a href="index.html" class="d-block">
-                  <img src="img/logo.jpg"  style="max-width: 170px" alt="Image" class="img-fluid">
+                  <img src="/img/logo.jpg"  style="max-width: 170px" alt="Image" class="img-fluid">
                 </a>
               </div>
               <div class="mr-auto">
@@ -95,7 +114,7 @@
                       <a href="admissions.html" class="nav-link text-left">Cursos</a>
                     </li>                    
                     <li>
-                        <a href="contact.html" class="nav-link text-left">Contáctanos</a>
+                        <a href="/contact.html" class="nav-link text-left">Contáctanos</a>
                       </li>
                   </ul>                                                                                                                                                                                                                                                                                          </ul>
                 </nav>

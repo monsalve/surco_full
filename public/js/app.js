@@ -74698,7 +74698,7 @@ var render = function() {
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "row justify-content-center" }, [
       _c("div", { staticClass: "col-md-10 mt-4" }, [
-        _c("h3", [_vm._v(" Not Found What you're looking ")]),
+        _c("h3", [_vm._v(" Panel Administrativo ")]),
         _vm._v(" "),
         _c(
           "svg",
