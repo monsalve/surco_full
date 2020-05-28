@@ -4,10 +4,10 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Users Table</h3>
+                <h3 class="card-title">Usuarios</h3>
 
                 <div class="card-tools">
-                    <button class="btn btn-success" @click="newModal">Add New <i class="fas fa-user-plus fa-fw"></i></button>
+                    <button class="btn btn-success" @click="newModal">Agregar Usuario <i class="fas fa-user-plus fa-fw"></i></button>
                 </div>
               </div>
               <!-- /.card-header -->
@@ -16,11 +16,11 @@
                   <tbody>
                     <tr>
                         <th>ID</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Type</th>
-                        <th>Registered At</th>
-                        <th>Modify</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Tipo</th>
+                        <th>Registrado el</th>
+                        <th>Modificado el</th>
                   </tr>
 
 

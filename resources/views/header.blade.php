@@ -69,10 +69,10 @@
                 </div>
               @else
                 <div class="col-xl-4 text-right">
-                  <a href="{{ route('register') }}" class="small btn btn-primary px-4 py-2 rounded-0">
+                  <a href="/dashboard" class="small btn btn-primary px-4 py-2 rounded-0">
                     <span class="icon-users"></span> Panel Administrativo
                   </a>
-                  <a href="/dashboard"           class="btn btn-outline-danger small ml-3 px-4 py-2 rounded-0 " onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                  <a href="/logout"           class="btn btn-outline-danger small ml-3 px-4 py-2 rounded-0 " onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     <span class="icon-unlock-alt"></span> Salir                    
                  </a>
                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -105,16 +105,16 @@
                     </li>
                     <li class="has-children">
                       <a href="/#nosotros" class="nav-link text-left">Nosotros</a>
-                      <ul class="dropdown">
-                        <li><a href="teachers.html">Nuestros Instructores</a></li>
-                        <li><a href="about.html">Nuestra Institución</a></li>
+                      <ul class="dropdown">                        
+                        <li><a  href="/#nosotros">Nuestra Institución</a></li>
+                        <li><a href="/#teachers">Nuestros Instructores</a></li>
                       </ul>
                     </li>
                     <li>
                       <a href="admissions.html" class="nav-link text-left">Cursos</a>
                     </li>                    
                     <li>
-                        <a href="/contact.html" class="nav-link text-left">Contáctanos</a>
+                        <a href="#contact" class="nav-link text-left">Contáctenos</a>
                       </li>
                   </ul>                                                                                                                                                                                                                                                                                          </ul>
                 </nav>

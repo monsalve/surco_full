@@ -81,7 +81,7 @@
         </div>
       </div>
   
-      <div class="site-section ftco-subscribe-1 site-blocks-cover pb-4" style="background-image: url('img/bg_1.jpg')">
+      <div id="nosotros" class="site-section ftco-subscribe-1 site-blocks-cover pb-4" style="background-image: url('img/bg_1.jpg')">
         <div class="container">
           <div class="row align-items-end">
             <div class="col-lg-7">
@@ -94,20 +94,19 @@
 
       <div class="container pt-5 ">
         <div class="row">
-          <div class="col-lg-4">
+          <div class="col-lg-8">
             <h2 class="section-title-underline">
               <span>SURCOLOMBIANA DE ESTUDIOS SAS</span>
             </h2>
           </div>
-          <div class="col-lg-4">
+          <div class="col-12">
             <p>Concibe a la Educación a Distancia como una herramienta complementaria para la formación a todo nivel, interpretando que la educación no presencial es una realidad, tanto en Colombia como a nivel internacional, debido a diferentes factores (sociales, laborales, tecnológicos) que se combinan en un mundo centrado en el conocimiento, en el que los requerimientos de aprendizaje y actualización implican respuestas desde las Instituciones educativas que exceden el modelo clásico de actividades presenciales en el aula.</p>
-          </div>
-          <div class="col-lg-4">
+         
             <p style="text-align: justify;">El desarrollo de toda Educación a Distancia requiere una combinación de elementos que parten de lo pedagógico, incorporan la tecnología informática, electrónica y de comunicaciones y contiene también componentes propios de la psicología cognitiva y del diseño de interfases hombre-máquina. De esta forma toda persona puede capacitarse de forma permanente utilizando la tecnología. En este mismo camino, se refuerza el trabajo de Surcolombiana de Estudios SAS en pos de la cooperación, el asociativismo y la adopción de nuevas tecnologías informáticas.</p>
           </div>
         </div>
       </div>
-      <div class="site-section">
+      <div class="site-section" >
         <div class="container">
           <div class="row">
             <div class="col-lg-12 ml-auto align-self-left">
@@ -121,8 +120,8 @@
           </div>
         </div>
       </div>
-      <div class="site-section">
-        <div class="container">
+      <div class="site-section" style="margin-top: -6em;">
+        <div class="container" >
           <div class="row ">
               <div class="col-lg-6 mb-lg-0 ">
                   <img src="img/course_4.jpg" alt="Image" class="img-fluid"> 
@@ -152,7 +151,7 @@
         </div>
       </div>
 
-      <div class="site-section">
+      <div class="site-section" style="margin-top: -4em;">
         <div class="container">
           <div class="row">
             <div class="col-lg-12 ml-auto align-self-left">
@@ -168,234 +167,117 @@
       </div>
 
       
-      
+      <div id="teachers" class="site-section" style="margin-top: -4em;">
+        <div class="container">
+          <div class="row mb-2 justify-content-center text-center">
+            <div class="col-lg-6 mb-3">
+              <h2 class="section-title-underline mb-5">
+                <span>Nuestros Instructores</span>
+              </h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 col-md-6 mb-5 mb-lg-5">
   
-        <!-- // 05 - Block -->
+              <div class="feature-1 border person text-center">
+                  <img src="img/person_1.jpg" alt="Image" class="img-fluid">
+                <div class="feature-1-content">
+                  <h2>Craig Daniel</h2>
+                  <span class="position mb-3 d-block">Math Teacher</span>    
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi hendrerit elit</p>
+                </div>
+              </div>
+            </div>           
+          </div>
+        </div>
+      </div>
+      
+      <div id="contact" class="site-section ftco-subscribe-1 site-blocks-cover pb-4" style="background-image: url('img/bg_1.jpg')">
+        <div class="container">
+          <div class="row align-items-end">
+            <div class="col-lg-7">
+              <h2 class="mb-0">Contáctenos</h2>
+              <p>Escribenos a través de nuestro formulario de contacto o a traves de los opciones que te ofrecemos a continuación.</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
       <div class="site-section">
-          <div class="container">
-            <div class="row mb-5">
-              <div class="col-lg-4">
-                <h2 class="section-title-underline">
-                  <span>Testimonials</span>
-                </h2>
-              </div>
-            </div>
-    
-    
-            <div class="owl-slide owl-carousel">
-    
-              <div class="ftco-testimonial-1">
-                <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
-                  <img src="img/person_1.jpg" alt="Image" class="img-fluid mr-3">
-                  <div>
-                    <h3>Allison Holmes</h3>
-                    <span>Designer</span>
-                  </div>
-                </div>
-                <div>
-                  <p>&ldquo;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis libero quidem aut tempore dolore iure maiores, perferendis, provident numquam illum nisi amet necessitatibus. A, provident aperiam!&rdquo;</p>
-                </div>
-              </div>
-    
-              <div class="ftco-testimonial-1">
-                <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
-                  <img src="img/person_2.jpg" alt="Image" class="img-fluid mr-3">
-                  <div>
-                    <h3>Allison Holmes</h3>
-                    <span>Designer</span>
-                  </div>
-                </div>
-                <div>
-                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis libero quidem aut tempore dolore iure maiores, perferendis, provident numquam illum nisi amet necessitatibus. A, provident aperiam!</p>
-                </div>
-              </div>
-    
-              <div class="ftco-testimonial-1">
-                <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
-                  <img src="img/person_4.jpg" alt="Image" class="img-fluid mr-3">
-                  <div>
-                    <h3>Allison Holmes</h3>
-                    <span>Designer</span>
-                  </div>
-                </div>
-                <div>
-                  <p>&ldquo;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis libero quidem aut tempore dolore iure maiores, perferendis, provident numquam illum nisi amet necessitatibus. A, provident aperiam!&rdquo;</p>
-                </div>
-              </div>
-    
-              <div class="ftco-testimonial-1">
-                <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
-                  <img src="img/person_3.jpg" alt="Image" class="img-fluid mr-3">
-                  <div>
-                    <h3>Allison Holmes</h3>
-                    <span>Designer</span>
-                  </div>
-                </div>
-                <div>
-                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis libero quidem aut tempore dolore iure maiores, perferendis, provident numquam illum nisi amet necessitatibus. A, provident aperiam!</p>
-                </div>
-              </div>
-    
-              <div class="ftco-testimonial-1">
-                <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
-                  <img src="img/person_2.jpg" alt="Image" class="img-fluid mr-3">
-                  <div>
-                    <h3>Allison Holmes</h3>
-                    <span>Designer</span>
-                  </div>
-                </div>
-                <div>
-                  <p>&ldquo;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis libero quidem aut tempore dolore iure maiores, perferendis, provident numquam illum nisi amet necessitatibus. A, provident aperiam!&rdquo;</p>
-                </div>
-              </div>
-    
-              <div class="ftco-testimonial-1">
-                <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
-                  <img src="img/person_4.jpg" alt="Image" class="img-fluid mr-3">
-                  <div>
-                    <h3>Allison Holmes</h3>
-                    <span>Designer</span>
-                  </div>
-                </div>
-                <div>
-                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis libero quidem aut tempore dolore iure maiores, perferendis, provident numquam illum nisi amet necessitatibus. A, provident aperiam!</p>
-                </div>
-              </div>
-    
-            </div>
-            
-          </div>
-        </div>
-        
-    
-        <div class="section-bg style-1" style="background-image: url('img/hero_1.jpg');">
-          <div class="container">
+        <div class="container">
             <div class="row">
-              <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
-                <span class="icon flaticon-mortarboard"></span>
-                <h3>Our Philosphy</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis recusandae, iure repellat quis delectus ea? Dolore, amet reprehenderit.</p>
-              </div>
-              <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
-                <span class="icon flaticon-school-material"></span>
-                <h3>Academics Principle</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis recusandae, iure repellat quis delectus ea?
-                  Dolore, amet reprehenderit.</p>
-              </div>
-              <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
-                <span class="icon flaticon-library"></span>
-                <h3>Key of Success</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis recusandae, iure repellat quis delectus ea?
-                  Dolore, amet reprehenderit.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="news-updates">
-          <div class="container">
-             
-            <div class="row">
-              <div class="col-lg-9">
-                 <div class="section-heading">
-                  <h2 class="text-black">News &amp; Updates</h2>
-                  <a href="#">Read All News</a>
+              <div class="col col-sm-6 col-md-6 col-lm-6">
+                <div class="row">
+                  <div class="col col-sm-12 form-group">
+                      <label for="fname">Nombre</label>
+                      <input type="text" id="fname" class="form-control form-control-lg">
+                  </div>
                 </div>
                 <div class="row">
-                  <div class="col-lg-6">
-                    <div class="post-entry-big">
-                      <a href="news-single.html" class="img-link"><img src="img/blog_large_1.jpg" alt="Image" class="img-fluid"></a>
-                      <div class="post-content">
-                        <div class="post-meta"> 
-                          <a href="#">June 6, 2019</a>
-                          <span class="mx-1">/</span>
-                          <a href="#">Admission</a>, <a href="#">Updates</a>
-                        </div>
-                        <h3 class="post-heading"><a href="news-single.html">Campus Camping and Learning Session</a></h3>
-                      </div>
-                    </div>
+                  <div class="col-sm-12 col form-group">
+                    <label for="eaddress">Correo</label>
+                    <input type="text" id="eaddress" class="form-control form-control-lg">
                   </div>
-                  <div class="col-lg-6">
-                    <div class="post-entry-big horizontal d-flex mb-4">
-                      <a href="news-single.html" class="img-link mr-4"><img src="img/blog_1.jpg" alt="Image" class="img-fluid"></a>
-                      <div class="post-content">
-                        <div class="post-meta">
-                          <a href="#">June 6, 2019</a>
-                          <span class="mx-1">/</span>
-                          <a href="#">Admission</a>, <a href="#">Updates</a>
-                        </div>
-                        <h3 class="post-heading"><a href="news-single.html">Campus Camping and Learning Session</a></h3>
-                      </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col form-group">
+                        <label for="tel">Tel/Cel</label>
+                        <input type="text" id="tel" class="form-control form-control-lg">
                     </div>
-    
-                    <div class="post-entry-big horizontal d-flex mb-4">
-                      <a href="news-single.html" class="img-link mr-4"><img src="img/blog_2.jpg" alt="Image" class="img-fluid"></a>
-                      <div class="post-content">
-                        <div class="post-meta">
-                          <a href="#">June 6, 2019</a>
-                          <span class="mx-1">/</span>
-                          <a href="#">Admission</a>, <a href="#">Updates</a>
-                        </div>
-                        <h3 class="post-heading"><a href="news-single.html">Campus Camping and Learning Session</a></h3>
-                      </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea name="" id="message" cols="30" rows="5" class="form-control"></textarea>
                     </div>
-    
-                    <div class="post-entry-big horizontal d-flex mb-4">
-                      <a href="news-single.html" class="img-link mr-4"><img src="img/blog_1.jpg" alt="Image" class="img-fluid"></a>
-                      <div class="post-content">
-                        <div class="post-meta">
-                          <a href="#">June 6, 2019</a>
-                          <span class="mx-1">/</span>
-                          <a href="#">Admission</a>, <a href="#">Updates</a>
-                        </div>
-                        <h3 class="post-heading"><a href="news-single.html">Campus Camping and Learning Session</a></h3>
-                      </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <input type="submit" value="Enviar Mensaje" class="btn btn-primary btn-lg px-5">
                     </div>
-                  </div>
                 </div>
               </div>
-              <div class="col-lg-3">
-                <div class="section-heading">
-                  <h2 class="text-black">Campus Videos</h2>
-                  <a href="#">View All Videos</a>
-                </div>
-                <a href="https://vimeo.com/45830194" class="video-1 mb-4" data-fancybox="" data-ratio="2">
-                  <span class="play">
-                    <span class="icon-play"></span>
-                  </span>
-                  <img src="img/course_5.jpg" alt="Image" class="img-fluid">
-                </a>
-                <a href="https://vimeo.com/45830194" class="video-1 mb-4" data-fancybox="" data-ratio="2">
-                    <span class="play">
-                      <span class="icon-play"></span>
-                    </span>
-                    <img src="img/course_5.jpg" alt="Image" class="img-fluid">
-                  </a>
+              <div class="col col-sm-6 col-md-6 col-lm-6">
+                <section>
+                  <p>Comunícate con nosotros para tener el gusto de resolver tus inquietudes.
+                    <br>
+                    
+                  </p>
+                  <div class="row">
+                    <div class="col-1">
+                      <span class=" icon icon-home"></span>
+                    </div>
+                    <div class="col-10">
+                          Calle 11 # 18 - 35
+                          Puerto Asís - Putumayo<br />
+                          Colombia
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-1">
+                      <span class="icon icon-phone"></span>
+                    </div>
+                    <div class="col-10">
+                      320 468 8543 
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-1">
+                      <span class="icon icon-mail_outline"></span>
+                    </div>
+                    <div class="col-10">
+                      coordinacion@surcoestudios.com
+                    </div>
+                  </div>
+                </section>
               </div>
             </div>
-          </div>
+            
         </div>
-    
-        <div class="site-section ftco-subscribe-1" style="background-image: url('img/bg_1.jpg')">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-lg-7">
-                <h2>Subscribe to us!</h2>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,</p>
-              </div>
-              <div class="col-lg-5">
-                <form action="" class="d-flex">
-                  <input type="text" class="rounded form-control mr-2 py-3" placeholder="Enter your email">
-                  <button class="btn btn-primary rounded py-3 px-4" type="submit">Send</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div> 
-    
-    
-        
-      <!-- .site-wrap -->
+    </div>
     
       @include('footer')
      
