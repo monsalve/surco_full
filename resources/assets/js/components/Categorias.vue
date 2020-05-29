@@ -7,39 +7,29 @@
                         <h3 class="card-title">Usuarios</h3>
 
                         <div class="card-tools">
-                             <button class="btn btn-success" @click="newModal">Agregar Usuario <i class="fas fa-user-plus fa-fw"></i></button>
+                             <button class="btn btn-success" @click="newModal">Empresa <i class="fas fa-user-plus fa-fw"></i></button>
                         </div>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
                         Tipo
-                        <select name="type" v-model="filtro_tipo" id="type" class="form-control">
-                            <option value="">Filtrar rol de usuario</option>
-                            <option value="admin">Administrador</option>
-                            <option value="user">Estudiante</option>
-                            <option value="author">Tutor</option>
-                        </select>
                     </div>
                     <div class="card-body table-responsive p-0">
                         <table class="table table-hover">
                             <tbody>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Nombre</th>
-                                    <th>Correo</th>
-                                    <th>Tipo</th>
+                                    <th>Empresa</th>                                   
                                     <th>Registrado el</th>
                                     <th>Modificado el</th>
                                 </tr>
                                 <tr v-for="user in users.data" :key="user.id">
                                     <td>{{user.id}}</td>
-                                    <td>{{user.name}}</td>
+                                    
                                     <td>{{user.email}}</td>
-                                    <td v-if="user.type == 'admin'" >Administrador</td>
-                                    <td v-if="user.type == 'user'" >Estudiante</td>
-                                    <td v-if="user.type == 'author'" >Tutor</td>
+                                    
                                     <td>{{user.created_at | myDate}}</td>
-
+                                    <td>{{user.update_at | myDate}}</td>
                                     <td>
                                         <a href="#" @click="editModal(user)">
                                             <i class="fa fa-edit blue"></i>
@@ -140,7 +130,6 @@
             return {
                 editmode: false,
                 users : {},
-                filtro_tipo: '',
                 form: new Form({
                     id:'',
                     name : '',
