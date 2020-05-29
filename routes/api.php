@@ -18,9 +18,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResources([
-    'user' => 'API\UserController'
-    , 'categoria' => 'API\CategoriaController'
-    , 'empresa' => 'API\EmpresaController'
+    'user'          => 'API\UserController'
+    , 'categoria'   => 'API\CategoriaController'
+    , 'empresa'     => 'API\EmpresaController'
+    , 'curso'       => 'API\CursoController'
 ]);
 
 Route::namespace('API')->group(function () {
@@ -30,4 +31,5 @@ Route::namespace('API')->group(function () {
     
     Route::get('findCategoria', 'CategoriaController@search');
     Route::get('findEmpresa', 'EmpresaController@search');
+    Route::get('findCurso', 'CursoController@search');
 });
