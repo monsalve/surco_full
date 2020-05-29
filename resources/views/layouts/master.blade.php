@@ -100,7 +100,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <li class="nav-item">
                   <router-link to="/categorias" style="opacity: 0.7;" class="nav-link">                   
                     <i class="fas fa-list-alt nav-icon green"></i>
-                    <p>Categorias</p>
+                    <p>Categorias</p> 
                   </router-link>
                 </li>
               </ul>
