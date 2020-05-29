@@ -51,6 +51,7 @@ let routes = [
     { path: '/empresas', component: require('./components/Empresas.vue') },
     { path: '/categorias', component: require('./components/Categorias.vue') },
     { path: '/cursos', component: require('./components/Cursos.vue') },
+    { path: '/inscripciones', component: require('./components/Inscripciones.vue') },
     { path: '*', component: require('./components/NotFound.vue') }
 ]
 
