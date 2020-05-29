@@ -100,7 +100,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <li class="nav-item">
                   <router-link to="/categorias" style="opacity: 0.7;" class="nav-link">                   
                     <i class="fas fa-list-alt nav-icon green"></i>
-                    <p>Categorias</p>
+                    <p>Categorias</p> 
                   </router-link>
                 </li>
               </ul>
@@ -109,6 +109,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <router-link to="/users" class="nav-link">                   
                 <i class="nav-icon fas fa-graduation-cap blue"></i>
                 <p>Cursos</p>
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/users" class="nav-link">                   
+                <i class="nav-icon fas fa-address-book yellow"></i>
+                <p>Inscripciones</p>
               </router-link>
             </li>
             <li class="nav-item">
