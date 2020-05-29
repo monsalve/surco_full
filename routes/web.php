@@ -1,13 +1,10 @@
 <?php
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','HomeController@index');
 
-Route::get('/home', function () {
-    return view('welcome');
-});
+
+Route::get('/home','HomeController@index');
 
 Auth::routes();
 
@@ -15,5 +12,9 @@ Auth::routes();
 Route::get('invoice', function(){
     return view('invoice');
 });
+
+Route::get('oferta','HomeController@oferta');
+
+Route::get('detalle','HomeController@detalle');
 
 Route::get('{path}','HomeController@index');
