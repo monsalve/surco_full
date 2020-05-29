@@ -57,4 +57,8 @@ class HomeController extends Controller
     {
         return view('detalle');
     }
+
+    public function dashboard(){
+        return view('home');
+    }
 }

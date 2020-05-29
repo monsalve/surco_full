@@ -15,6 +15,8 @@ Route::get('invoice', function(){
 
 Route::get('oferta','HomeController@oferta');
 
+Route::get('dashboard','HomeController@dashboard');
+
 Route::get('detalle','HomeController@detalle');
 
 Route::get('{path}','HomeController@index');
