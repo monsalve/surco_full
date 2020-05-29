@@ -163,6 +163,12 @@ class UserController extends Controller
         return ['message' => 'User Deleted'];
     }
 
+    public function getTutors(){
+       
+        $users = User::where('type','=','author')->select('id','name')->orderBy('name', 'asc')->get();
+        return ['users' => $users];
+    }
+
     public function search(){
 
         if ($search = \Request::get('q')) {

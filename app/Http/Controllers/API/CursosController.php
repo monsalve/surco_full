@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Categoria;
+use App\Curso;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class CategoriaController extends Controller
+class CursoController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -26,7 +26,7 @@ class CategoriaController extends Controller
     public function index()
     {
         //if (\Gate::allows('isAdmin') || \Gate::allows('isAuthor')) {
-        return Categoria::latest()->paginate(5);
+        return Curso::latest()->paginate(5);
         //}
     }
 
@@ -38,22 +38,23 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
+        /*
         $this->validate($request,[
-            'categoria' => 'required|string|max:300'
-        ]);
+            'curso' => 'required|string|max:300'
+        ]);*/
 
-        return Categoria::create([
-            'categoria' => $request['categoria']
+        return Curso::create([
+            'curso' => $request['curso']
         ]);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Categoria  $categoria
+     * @param  \App\Curso  $curso
      * @return \Illuminate\Http\Response
      */
-    public function show(Categoria $categoria)
+    public function show(Curso $curso)
     {
         //
     }
@@ -67,13 +68,13 @@ class CategoriaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $categoria = Categoria::findOrFail($id);
+        $curso = Curso::findOrFail($id);
 
-        $this->validate($request,[
-            'categoria' => 'required|string|max:300'
-        ]);
+        /*$this->validate($request,[
+            'curso' => 'required|string|max:300'
+        ]);*/
 
-        $categoria->update($request->all());
+        $curso->update($request->all());
         return ['message' => 'Categoría actualizada'];
     }
 
@@ -87,23 +88,23 @@ class CategoriaController extends Controller
     {
         $this->authorize('isAdmin');
 
-        $categoria = Categoria::findOrFail($id);
+        $curso = Curso::findOrFail($id);
         
-        $categoria->delete();
+        $curso->delete();
 
-        return ['message' => 'Categoría eliminada'];
+        return ['message' => 'Curso eliminado'];
     }
 
     public function search ()
     {
         if ($search = \Request::get('q')) {
-            $categorias = Categoria::where(function ($query) use ($search) {
-                $query->where('categoria', 'LIKE', "%$search%");
+            $cursos = Curso::where(function ($query) use ($search) {
+                $query->where('nombre', 'LIKE', "%$search%");
             })->paginate(20);
         } else {
-            $categorias = Categoria::latest()->paginate(5);
+            $cursos = Curso::latest()->paginate(5);
         }
 
-        return $categorias;
+        return $cursos;
     }
 }
