@@ -18,11 +18,18 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResources([
-    'user' => 'API\UserController'
-    , 'categoria' => 'API\CategoriaController'
+    'user'          => 'API\UserController'
+    , 'categoria'   => 'API\CategoriaController'
+    , 'empresa'     => 'API\EmpresaController'
+    , 'curso'       => 'API\CursoController'
 ]);
-Route::get('profile', 'API\UserController@profile');
-Route::get('findUser', 'API\UserController@search');
-Route::put('profile', 'API\UserController@updateProfile');
 
-Route::get('findCategoria', 'API\CategoriaController@search');
+Route::namespace('API')->group(function () {
+    Route::get('profile', 'UserController@profile');
+    Route::get('findUser', 'UserController@search');
+    Route::put('profile', 'UserController@updateProfile');
+    
+    Route::get('findCategoria', 'CategoriaController@search');
+    Route::get('findEmpresa', 'EmpresaController@search');
+    Route::get('findCurso', 'CursoController@search');
+});
