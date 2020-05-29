@@ -78507,7 +78507,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "card-body" }, [
-                _vm._v("\n                    Tipo\n                ")
+                _vm._v("\n                    Tipo \n                ")
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "card-body table-responsive p-0" }, [
