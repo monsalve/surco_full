@@ -22,6 +22,7 @@ Route::apiResources([
     , 'categoria'   => 'API\CategoriaController'
     , 'empresa'     => 'API\EmpresaController'
     , 'curso'       => 'API\CursoController'
+    , 'evaluacion'  => 'API\EvaluacionController'
 ]);
 
 Route::namespace('API')->group(function () {
@@ -32,4 +33,5 @@ Route::namespace('API')->group(function () {
     Route::get('findCategoria', 'CategoriaController@search');
     Route::get('findEmpresa', 'EmpresaController@search');
     Route::get('findCurso', 'CursoController@search');
+    Route::get('findEvaluacion', 'EvaluacionController@search');
 });
