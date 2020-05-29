@@ -28,6 +28,7 @@ Route::apiResources([
 Route::namespace('API')->group(function () {
     Route::get('profile', 'UserController@profile');
     Route::get('findUser', 'UserController@search');
+    Route::get('getTutors', 'UserController@getTutors');
     Route::put('profile', 'UserController@updateProfile');
     
     Route::get('findCategoria', 'CategoriaController@search');

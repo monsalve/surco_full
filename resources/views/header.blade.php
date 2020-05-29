@@ -111,7 +111,7 @@
                       </ul>
                     </li>
                     <li>
-                      <a href="admissions.html" class="nav-link text-left">Cursos</a>
+                      <a href="/oferta" class="nav-link text-left">Cursos</a>
                     </li>                    
                     <li>
                         <a href="#contact" class="nav-link text-left">Contáctenos</a>
