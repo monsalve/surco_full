@@ -112,7 +112,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/users" class="nav-link">                   
+              <router-link to="/inscripciones" class="nav-link">                   
                 <i class="nav-icon fas fa-address-book yellow"></i>
                 <p>Inscripciones</p>
               </router-link>
