@@ -9,7 +9,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>LaraStart | Starter Laravel Application</title>
+  <title>Surcoestudios</title>
   <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="/css/app.css">
 </head>
@@ -29,7 +29,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- SEARCH FORM -->
       <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" @keyup="searchit" v-model="search" type="search" placeholder="Search" aria-label="Search">
+        <input class="form-control form-control-navbar" @keyup="searchit" v-model="search" type="search" placeholder="Buscar" aria-label="Search">
         <div class="input-group-append">
           <button class="btn btn-navbar" @click="searchit">
             <i class="fa fa-search"></i>
@@ -69,69 +69,73 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-
             <li class="nav-item">
-            <router-link to="/dashboard" class="nav-link">
+              <router-link to="/dashboard" class="nav-link">
                 <i class="nav-icon fas fa-tachometer-alt blue"></i>
+                <p>Panel Admistrativo</p>
+              </router-link>
+            </li>        
+          @can('isAdmin')    
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-cog green"></i>
                 <p>
-                Dashboard
-
+                  Administración
+                  <i class="right fa fa-angle-left"></i>
                 </p>
-            </router-link>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <router-link to="/users" style="opacity: 0.7;" class="nav-link">
+                    <i class="fas fa-users nav-icon green"></i>
+                    <p>Usuarios</p>
+                  </router-link>
+                </li>
+                <li class="nav-item">
+                  <router-link to="/empresas" style="opacity: 0.7;" class="nav-link">                   
+                    <i class="fas fa-building nav-icon green"></i>
+                    <p>Empresas</p>
+                  </router-link>
+                </li>
+                <li class="nav-item">
+                  <router-link to="/categorias" style="opacity: 0.7;" class="nav-link">                   
+                    <i class="fas fa-list-alt nav-icon green"></i>
+                    <p>Categorias</p>
+                  </router-link>
+                </li>
+              </ul>
             </li>
-
-            
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-cog green"></i>
-              <p>
-                Administración
-                <i class="right fa fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <router-link to="/users" class="nav-link">
-                  <i class="fas fa-users nav-icon"></i>
-                  <p>Usuarios</p>
-                </router-link>
-              </li>
-
-            </ul>
+            <li class="nav-item">
+              <router-link to="/users" class="nav-link">                   
+                <i class="nav-icon fas fa-graduation-cap blue"></i>
+                <p>Cursos</p>
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/developer" class="nav-link">
+                <i class="nav-icon fas fa-cogs"></i>
+                <p>Desarrollador</p>
+              </router-link>
+            </li>
+          @endcan
+          <li class="nav-item">
+            <router-link to="/profile" class="nav-link">
+              <i class="nav-icon fas fa-user orange"></i>
+              <p>Perfil</p>
+            </router-link>
           </li>
-<!--
-          <li class="nav-item">
-                <router-link to="/developer" class="nav-link">
-                    <i class="nav-icon fas fa-cogs"></i>
-                    <p>
-                        Developer
-                    </p>
-                </router-link>
-         </li>
--->       
-          <li class="nav-item">
-                <router-link to="/profile" class="nav-link">
-                    <i class="nav-icon fas fa-user orange"></i>
-                    <p>
-                        Perfil
-                    </p>
-                </router-link>
-         </li>
 
           <li class="nav-item">
-                <a class="nav-link" href="{{ route('logout') }}"
-                onclick="event.preventDefault();
-                              document.getElementById('logout-form').submit();">
-                    <i class="nav-icon fa fa-power-off red"></i>
-                    <p>
-                        {{ __('Salir') }}
-                    </p>
-                 </a>
-
+            <a class="nav-link" href="{{ route('logout') }}"
+              onclick="event.preventDefault();
+              document.getElementById('logout-form').submit();">
+              <i class="nav-icon fa fa-power-off red"></i>
+              <p>{{ __('Salir') }}</p>
+            </a>
              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                  @csrf
              </form>
-        </li>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -159,7 +163,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <footer class="main-footer">
     <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
-      Anything you want
+      
     </div>
     <!-- Default to the left -->
     <strong>Desarrollado por <a href="https://fractalagenciadigital.com">Agencia Digital Fractal</a> 2020</strong> 
