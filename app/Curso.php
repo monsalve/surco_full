@@ -9,4 +9,18 @@ class Curso extends Model
     protected $fillable = ['nombre', 'categoria', 'tutor', 'duracion', 'tipo_duracion', 'img', 'valor', 'estado', 'descripcion', 'tipo', 'validez'
     , 'tipo_validez'];
     protected $table = 'cursos';
+
+    protected $fillable = [
+        'nombre'
+        , 'categoria'
+        , 'tutor'
+        , 'duracion'
+        , 'tipo_duracion'
+        , 'img'
+        , 'valor'
+        , 'descripcion'
+        , 'tipo'
+        , 'validez'
+        , 'tipo_validez'
+    ];
 }
