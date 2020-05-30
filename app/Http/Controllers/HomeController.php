@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 use App\User;
 use App\Categoria;
 use App\Curso;
@@ -53,9 +54,15 @@ class HomeController extends Controller
         return view('oferta',[ 'cursos' => $cursos, 'tutores' => $this->getListTutoresArray(), 'categorias' => $this->getListCategorisArray()]);
     }
 
-    public function detalle()
+    public function detalle(Request $request, $id)
     {
-        return view('detalle');
+        $curso = array();
+        $curso= Curso::where('id','=',$id)->orderBy('nombre', 'asc')->get();
+        //var_dump($curso); exit; die;
+        $user = auth()->user();
+        //$data = $request->session()->all();
+        
+        return view('detalle', ['curso' => $curso[0], 'tutores' => $this->getListTutoresArray(), 'categorias' => $this->getListCategorisArray(), 'user' => $user]);
     }
 
     public function dashboard(){

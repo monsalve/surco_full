@@ -17,6 +17,8 @@ Route::get('oferta','HomeController@oferta');
 
 Route::get('dashboard','HomeController@dashboard');
 
-Route::get('detalle','HomeController@detalle');
+Route::get('inscribirme/{id_curso}/{id_alumno}','HomeController@inscribirme');
+
+Route::get('detalle/{id_curso}','HomeController@detalle');
 
 Route::get('{path}','HomeController@index');
