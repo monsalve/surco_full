@@ -25,6 +25,8 @@ Route::apiResources([
     , 'modulo'       => 'API\ModuloController'
     , 'documento'       => 'API\DocumentoController'
     , 'pregunta'       => 'API\PreguntaController'
+    , 'inscripcion'       => 'API\InscripcionController'
+    
 ]);
 
 Route::namespace('API')->group(function () {
@@ -34,12 +36,20 @@ Route::namespace('API')->group(function () {
     Route::get('getModules/{id_curso}', 'ModuloController@getModules');
     Route::get('getDocumentos/{id_modulo}', 'DocumentoController@getDocumentos');
     Route::get('getPreguntas/{id_modulo}', 'PreguntaController@getPreguntas');
+    Route::get('borrarPregunta/{id_modulo}', 'PreguntaController@borrarPregunta');
     Route::put('profile', 'UserController@updateProfile');
-
+    Route::get('inscribirme/{id_curso}', 'InscripcionController@inscribirme');
+    Route::get('getInscripciones', 'InscripcionController@getInscripciones');
+    Route::get('activaInscripcion/{id}', 'InscripcionController@activa');
+    Route::get('findMisInscripciones', 'InscripcionController@findMisInscripciones');
+    Route::get('cancelarMisInscripciones/{id}', 'InscripcionController@cancelarMisInscripciones');
     
 
     Route::get('findCategoria', 'CategoriaController@search');
     Route::get('findEmpresa', 'EmpresaController@search');
     Route::get('findCurso', 'CursoController@search');
     Route::get('findModulo', 'ModuloController@search');
+    Route::get('findInscripcion', 'InscripcionController@search');    
+    
+    
 });

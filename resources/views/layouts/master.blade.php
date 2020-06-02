@@ -11,7 +11,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <title>Surcoestudios</title>
   <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="css/app.css">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper" id="app">
@@ -44,7 +44,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="/" class="brand-link">
-      <img style src="./img/logo.jpg" alt="Surcoestudios" class="brand-image img-circle elevation-3"
+      <img style src="img/logo.jpg" alt="Surcoestudios" class="brand-image img-circle elevation-3"
            style="opacity: .8;">
       <span class="brand-text font-weight-light">.</span>
     </a>
@@ -54,7 +54,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="./img/profile.png" class="img-circle elevation-2" alt="User Image">
+          <img src="img/profile.png" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">
@@ -70,7 +70,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item">
-              <router-link to="/dashboard" class="nav-link">
+              <router-link to="dashboard" class="nav-link">
                 <i class="nav-icon fas fa-tachometer-alt blue"></i>
                 <p>Panel Admistrativo</p>
               </router-link>
@@ -112,7 +112,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/users" class="nav-link">                   
+              <router-link to="/inscripciones" class="nav-link">                   
                 <i class="nav-icon fas fa-address-book yellow"></i>
                 <p>Inscripciones</p>
               </router-link>
@@ -124,6 +124,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </router-link>
             </li>
           @endcan
+          <li class="nav-item">
+            <router-link to="/clases" class="nav-link">                   
+              <i class="nav-icon fas fa-book-reader yellow"></i>
+              <p>Mis cursos</p>
+            </router-link>
+          
           <li class="nav-item">
             <router-link to="/profile" class="nav-link">
               <i class="nav-icon fas fa-user orange"></i>
@@ -183,6 +189,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </script>
 @endauth
 
-<script src="/js/app.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>

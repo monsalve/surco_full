@@ -44,13 +44,14 @@ class UserController extends Controller
     public function store(Request $request)
     {
 
+      
+        
         $this->validate($request,[
-            'name' => 'required|string|max:191',
-            'apellido' => 'required|string|max:191',
+            'name' => 'required|string|max:191',            
             'email' => 'required|string|email|max:191|unique:users',
             'password' => 'required|string|min:6'
         ]);
-
+        
         return User::create([
             'name' => $request['name'],
             'apellido' => isset($request['apellido']) ? $request['type'] : '',
@@ -60,6 +61,7 @@ class UserController extends Controller
             'type' => isset($request['type']) ? $request['type'] : '' ,
             'bio' => isset($request['bio']) ? $request['type'] : '',
             'photo' => isset($request['photo']) ? $request['type'] : '',
+            'telefonos' => isset($request['telefonos']) ? $request['telefonos'] : '',
             'password' => Hash::make($request['password']),
         ]);
 
@@ -177,7 +179,7 @@ class UserController extends Controller
                         ->orWhere('email','LIKE',"%$search%");
             })->paginate(20);
         }else{
-            $users = User::latest()->paginate(5);
+            $users = User::latest()->paginate(10);
         }
 
         return $users;

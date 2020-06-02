@@ -51,6 +51,9 @@ let routes = [
     { path: '/empresas', component: require('./components/Empresas.vue') },
     { path: '/categorias', component: require('./components/Categorias.vue') },
     { path: '/cursos', component: require('./components/Cursos.vue') },
+    { path: '/inscripciones', component: require('./components/Inscripciones.vue') },
+    { path: '/profile', component: require('./components/Profile.vue') },
+    { path: '/clases', component: require('./components/Clases.vue') },
     { path: '*', component: require('./components/NotFound.vue') }
 ]
 
@@ -106,7 +109,8 @@ const app = new Vue({
     el: '#app',
     router,
     data: {
-        search: ''
+        search: '',
+        ruta: '/new_surcoestudios/laravStart/public/'
     },
     methods: {
         searchit: _.debounce(() => {

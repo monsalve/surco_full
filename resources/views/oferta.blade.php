@@ -8,7 +8,7 @@
           <div class="row align-items-end">
             <div class="col-lg-7">
               <h2 class="mb-0">Cursos</h2>
-              <p>Conoce nuestra oferta academica.</p>
+              <p>Conoce nuestros cursos.</p>
             </div>
           </div>
         </div>
@@ -31,18 +31,10 @@
                     <div class="course-1-item">
                         <figure class="thumnail">
                           <a href="/detalle/{{ $curso->id}}">
-                            <img src="img/{{$curso->img}}" alt="Image" class="img-fluid">
+                            <img src="img/{{$curso->img ? $curso->img : 'course_2.jpg'}}" alt="Image" class="img-fluid">
                           </a>
-                          <div style="background: #d86a0b;" class="price">$ {{number_format($curso->valor,0)}}</div>
-                          <div class="category">
-                            @if ($curso->tipo == 1)
-                              Curso de capacitación en
-                            @else
-                              Diplomado en
-                            @endif
-                            <h3>{{$curso->nombre}}</h3>
-                          
-                          </div>  
+                         
+                          <div class="category" style="background: #d86a0b;"> Curso en <h3>{{$curso->nombre}}</h3></div>  
                         </figure>
                         <div class="course-1-content pb-4">
                           <p class="text-left"><b>Categoria:</b>{{$categorias[$curso->categoria]}}</p>

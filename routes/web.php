@@ -15,9 +15,11 @@ Route::get('invoice', function(){
 
 Route::get('oferta','HomeController@oferta');
 
+Route::get('diplomados','HomeController@diplomados');
+
 Route::get('dashboard','HomeController@dashboard');
 
-Route::get('inscribirme/{id_curso}/{id_alumno}','HomeController@inscribirme');
+Route::get('inscribirme/{id_curso}','HomeController@inscribirme');
 
 Route::get('detalle/{id_curso}','HomeController@detalle');
 

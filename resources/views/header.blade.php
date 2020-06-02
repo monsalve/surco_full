@@ -16,24 +16,24 @@
     
        
         <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
-        <link rel="stylesheet" href="/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="fonts/icomoon/style.css">
     
-        <link rel="stylesheet" href="/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/css/jquery-ui.css">
-        <link rel="stylesheet" href="/css/owl.carousel.min.css">
-        <link rel="stylesheet" href="/css/owl.theme.default.min.css">
-        <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/jquery-ui.css">
+        <link rel="stylesheet" href="css/owl.carousel.min.css">
+        <link rel="stylesheet" href="css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="css/owl.theme.default.min.css">
     
-        <link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+        <link rel="stylesheet" href="css/jquery.fancybox.min.css">
     
-        <link rel="stylesheet" href="/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="css/bootstrap-datepicker.css">
     
-        <link rel="stylesheet" href="/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
     
-        <link rel="stylesheet" href="/css/aos.css">
-        <link href="/css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="css/aos.css">
+        <link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
     
-        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     
     <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -69,10 +69,10 @@
                 </div>
               @else
                 <div class="col-xl-4 text-right">
-                  <a href="/dashboard" class="small btn btn-primary px-4 py-2 rounded-0">
+                  <a href="dashboard" class="small btn btn-primary px-4 py-2 rounded-0">
                     <span class="icon-users"></span> Panel Administrativo
                   </a>
-                  <a href="/logout"           class="btn btn-outline-danger small ml-3 px-4 py-2 rounded-0 " onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                  <a href="logout"           class="btn btn-outline-danger small ml-3 px-4 py-2 rounded-0 " onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     <span class="icon-unlock-alt"></span> Salir                    
                  </a>
                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -93,26 +93,33 @@
           <div class="container">
             <div class="d-flex align-items-center">
               <div class="site-logo">
-                <a href="index.html" class="d-block">
-                  <img src="/img/logo.jpg"  style="max-width: 170px" alt="Image" class="img-fluid">
+                <a href="/" class="d-block">
+                  <img src="img/logo.jpg"  style="max-width: 170px" alt="Image" class="img-fluid">
                 </a>
               </div>
               <div class="mr-auto">
                 <nav class="site-navigation position-relative text-right" role="navigation">
                   <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
                     <li class="active">
-                      <a href="index.html" class="nav-link text-left">Inicio</a>
+                      <a href="/" class="nav-link text-left">Inicio</a>
                     </li>
+                    <!--
                     <li class="has-children">
-                      <a href="/#nosotros" class="nav-link text-left">Nosotros</a>
+                      <a href="#nosotros" class="nav-link text-left">Nosotros</a>
                       <ul class="dropdown">                        
-                        <li><a  href="/#nosotros">Nuestra Institución</a></li>
-                        <li><a href="/#teachers">Nuestros Instructores</a></li>
+                        <li><a  href="#nosotros">Nuestra Institución</a></li>
+                        <li><a href="#teachers">Nuestros Instructores</a></li>
                       </ul>
+                    </li>-->
+                    <li>
+                      <a href="#nosotros" class="nav-link text-left">Nosotros</a>
                     </li>
                     <li>
-                      <a href="/oferta" class="nav-link text-left">Cursos</a>
-                    </li>                    
+                      <a href="/oferta" class="nav-link text-left" click='alert()'>Cursos</a>
+                    </li>  
+                    <li>
+                      <a href="/diplomados" class="nav-link text-left">Diplomados</a>
+                    </li>                  
                     <li>
                         <a href="#contact" class="nav-link text-left">Contáctenos</a>
                       </li>

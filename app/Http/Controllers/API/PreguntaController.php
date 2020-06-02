@@ -48,7 +48,12 @@ class PreguntaController extends Controller
             , 'respuesta' => $request['respuesta']
             , 'id_modulo' => $request['id_modulo']
             , 'tipo' => $request['tipo']
-            , 'a' => $request['a'], 'b' => $request['b'], 'c' => $request['c'], 'd' => $request['d'], 'e' => $request['e'], 'f' => $request['f']
+            , 'a' => $request['a']? $request['a']: ''
+            , 'b' => $request['b']? $request['b']: ''
+            , 'c' => $request['c']? $request['c']: ''
+            , 'd' => $request['d']? $request['d']: ''
+            , 'e' => $request['e']? $request['e']: ''
+            , 'f' => $request['f']? $request['f']: ''
         ]);
     }
 
@@ -79,7 +84,19 @@ class PreguntaController extends Controller
             , 'respuesta' => 'required|max:450'
         ]);
         
-        $pregunta->update($request->all());
+        $pregunta->pregunta = $request['pregunta'];
+        $pregunta->respuesta = $request['respuesta'];
+        $pregunta->id_modulo = $request['id_modulo'];
+        $pregunta->tipo = $request['tipo'];
+        $pregunta->a = $request['a']? $request['a']: ''; 
+        $pregunta->b = $request['b']? $request['b']: ''; 
+        $pregunta->c = $request['c']? $request['c']: '';
+        $pregunta->d = $request['d']? $request['d']: ''; 
+        $pregunta->e = $request['e']? $request['e']: '';
+        $pregunta->f = $request['f']? $request['f']: '';
+
+        
+        $pregunta->save();
         return ['message' => 'Pregunta actualizado'];
     }
 
@@ -100,6 +117,18 @@ class PreguntaController extends Controller
         return ['message' => 'Pregunta eliminado'];
     }
 
+    public function borrarPregunta($id)
+    {
+        $this->authorize('isAdmin');
+
+        $pregunta = Pregunta::findOrFail($id);
+        
+        $pregunta->delete();
+
+        return ['message' => 'Pregunta eliminado'];
+    }
+
+
     public function search ()
     {
         if ($search = \Request::get('q')) {
@@ -107,7 +136,7 @@ class PreguntaController extends Controller
                 $query->where('pregunta', 'LIKE', "%$search%");
             })->paginate(20);
         } else {
-            $preguntas = Pregunta::latest()->paginate(5);
+            $preguntas = Pregunta::latest()->paginate(100);
         }
 
         return $preguntas;
@@ -118,7 +147,7 @@ class PreguntaController extends Controller
         
         $preguntas = Pregunta::where(function ($query) use ($id) {
             $query->where('id_modulo', 'LIKE', "%$id%");
-        })->get();
+        })->paginate(100);
        
 
         return $preguntas;

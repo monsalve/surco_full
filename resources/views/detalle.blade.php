@@ -1,5 +1,5 @@
 
-    @include('header')
+    @include('header2')
 
     <div class="site-section ftco-subscribe-1 site-blocks-cover pb-4" style="background-image: url('../img/bg_1.jpg')">
         <div class="container">
@@ -28,7 +28,7 @@
             <div class="row">
                 <div class="col-md-6 mb-4">
                     <p>
-                        <img src="../img/{{$curso->img}}" alt="Image" class="img-fluid">
+                        <img src="/img/{{$curso->img ? $curso->img : 'course_2.jpg' }}" alt="Image" class="img-fluid">
                     </p>
                 </div>
                 <div class="col-lg-5 ml-auto align-self-center">
@@ -65,7 +65,7 @@
                         </ul>-->
 
                         <p>
-                            {{  print_r($user)}}
+                            
                           
                             @guest
                             <p><a href="#" onclick="alert('Debes iniciar sessión o registrarte para poder inscribirte a este curso')" class="btn btn-primary rounded-0 px-4">Inscribirse</a></p>
@@ -82,6 +82,6 @@
     </div>
 
       
-    @include('contactenos')
+    @include('contactenos2')
     
-    @include('footer')
+    @include('footer2')

@@ -154,7 +154,7 @@
         },
         methods: {
             getResults(page = 1) {
-                axios.get('api/user?page=' + page)
+                axios.get(this.$parent.ruta + 'api/user?page=' + page)
                 .then(response => {
                     this.users = response.data;
                 });
@@ -162,7 +162,7 @@
             updateUser(){
                 this.$Progress.start();
                 // console.log('Editing data');
-                this.form.put('api/user/'+this.form.id)
+                this.form.put(this.$parent.ruta + 'api/user/'+this.form.id)
                 .then(() => {
                     // success
                     $('#addNew').modal('hide');
@@ -203,7 +203,7 @@
 
                         // Send request to the server
                          if (result.value) {
-                                this.form.delete('api/user/'+id).then(()=>{
+                                this.form.delete(this.$parent.ruta + 'api/user/'+id).then(()=>{
                                         swal(
                                         'Deleted!',
                                         'Your file has been deleted.',
@@ -218,14 +218,14 @@
             },
             loadUsers(){
                 if(this.$gate.isAdminOrAuthor()){
-                    axios.get("api/user").then(({ data }) => (this.users = data));
+                    axios.get(this.$parent.ruta + "api/user").then(({ data }) => (this.users = data));
                 }
             },
 
             createUser(){
                 this.$Progress.start();
 
-                this.form.post('api/user')
+                this.form.post(this.$parent.ruta + 'api/user')
                 .then(()=>{
                     Fire.$emit('AfterCreate');
                     $('#addNew').modal('hide')
@@ -245,7 +245,7 @@
         created() {
             Fire.$on('searching',() => {
                 let query = this.$parent.search;
-                axios.get('api/findUser?q=' + query)
+                axios.get(this.$parent.ruta + 'api/findUser?q=' + query)
                 .then((data) => {
                     this.users = data.data
                 })

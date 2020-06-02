@@ -48,7 +48,7 @@ class ModuloController extends Controller
 
         return Modulo::create([
             'modulo'            => $request['modulo']
-            , 'contenido'       => $request['categoria']
+            , 'contenido'       => $request['contenido']
             , 'id_curso'           => $request['id_curso']
             , 'video'        => $request['video']
             , 'texto_prueba' => $request['texto_prueba']

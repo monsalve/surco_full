@@ -166,7 +166,7 @@
         </div>
       </div>
 
-      
+      <!--
       <div id="teachers" class="site-section" style="margin-top: -4em;">
         <div class="container">
           <div class="row mb-2 justify-content-center text-center">
@@ -192,7 +192,7 @@
           </div>
         </div>
       </div>
-      
+    -->
       @include('contactenos')
     
       @include('footer')

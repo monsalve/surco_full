@@ -81,6 +81,7 @@
                         <h3 class="card-title">Módulos curso: <b>{{curso.nombre}}</b></h3>
 
                         <div class="card-tools">
+                            <button class="btn btn-danger" @click="id_curso=''">Regresar <i class="fas fa-undo-alt fa-fw"></i></button>
                              <button class="btn btn-success" @click="newModalModulo">Agregar Modulo <i class="fas fa-plus fa-fw"></i></button>
                         </div>
                     </div>
@@ -110,7 +111,7 @@
                                         </button>
                                     </td>       
                                     <td>
-                                        <button type="button" class="btn btn-info" @click="ver_examen(modulo.id)">
+                                        <button type="button" class="btn btn-info" @click="ver_preguntas(modulo.id)">
                                             <i class="fas fa-graduation-cap"></i>
                                             Examen
                                         </button>
@@ -199,40 +200,17 @@
                                 </select>
                                 
                             </div>
-                            <div class="form-group col-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group col-12 col-sm-6 col-md-6 col-lg-6">
                                 <label for='duracion'>Descripción</label>
                                 <textarea v-model="form.descripcion" required name="descripcion" id="descripcion"
                                 placeholder="Descripcion"
                                 class="form-control" :class="{ 'is-invalid': form.errors.has('descripcion') }"></textarea>
                                 <has-error :form="form" field="descripcion"></has-error>
                             </div>
-                            <div class="form-group  col-6 col-sm-6 col-md-6 col-lg-6">
-                                <label for='valor'>Valor</label>
-                                <input v-model="form.valor" type="number"  min='1' name="valor" id="valor" required
-                                    placeholder="Valor"
-                                    class="form-control" :class="{ 'is-invalid': form.errors.has('valor') }">
-                                <has-error :form="form" field="valor"></has-error>
-                            </div>
-                            <div v-show="editmode" class="form-group col-12 col-sm-6 col-md-6 col-lg-6">
-                                <label for="photo" >Foto del curso</label>
-                                <div class="col-sm-12">
-                                    <input type="file" @change="updateFoto" name="photo" id="photo" class="form-input">
-                                </div>
-
-                            </div>
-                            <div class="form-group col-12 col-sm-6 col-md-6 col-lg-6 ">
-                                <label for='tipo'>Tipo</label>
-                                <select name="tipo" v-model="form.tipo" id="tipo" class="form-control" required>
-                                   
-                                    <option value="1">Curso corto</option>
-                                    <option value="2">Diplomado</option>                            
-                                </select>
-                            </div>
-
                             <div class="form-group  col-6 col-sm-4 col-md-4 col-lg-4">
                                 <label for='validez'>Validez</label>
                                 <input v-model="form.validez" type="number" min='1' name="validez" id="validez"
-                                    placeholder="Validez" required
+                                    placeholder="Validez" 
                                     class="form-control" :class="{ 'is-invalid': form.errors.has('validez') }">
                                 <has-error :form="form" field="validez"></has-error>
                             </div>
@@ -246,8 +224,29 @@
                                 </select>
                                 
                             </div>
-                            
+                            <div class="form-group col-12 col-sm-6 col-md-6 col-lg-6 ">
+                                <label for='tipo'>Tipo</label>
+                                <select name="tipo" v-model="form.tipo" id="tipo" class="form-control" required>
+                                   
+                                    <option value="1">Curso corto</option>
+                                    <option value="2">Diplomado</option>                            
+                                </select>
+                            </div>
+                            <div v-if="form.tipo == 2" class="form-group  col-6 col-sm-6 col-md-6 col-lg-6">
+                                <label for='valor'>Valor</label>
+                                <input v-model="form.valor" type="number"  min='1' name="valor" id="valor" 
+                                    placeholder="Valor"
+                                    class="form-control" :class="{ 'is-invalid': form.errors.has('valor') }">
+                                <has-error :form="form" field="valor"></has-error>
+                            </div>
+                            <div v-show="editmode" class="form-group col-12 col-sm-6 col-md-6 col-lg-6">
+                                <label for="photo" >Foto del curso</label>
+                                <div class="col-sm-12">
+                                    <input type="file" @change="updateFoto" name="photo" id="photo" class="form-input">
+                                </div>
 
+                            </div>
+                            
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
@@ -272,6 +271,7 @@
                         </button>
                     </div>
                     <form @submit.prevent="editmodeModule ? editarModulo() : crearModulo()">
+                       
                         <div class="modal-body row">
                             <div class="form-group  col-12 col-sm-6 col-md-6 col-lg-6">
                                 <label for='modulo'>Modulo</label>
@@ -301,7 +301,7 @@
                                 class="form-control" :class="{ 'is-invalid': form_modulo.errors.has('texto_prueba') }"></textarea>
                                 <has-error :form="form_modulo" field="texto_prueba"></has-error>
                             </div>
-                            <div class="form-group col-6 col-sm-2 col-md-2 col-lg-2">     
+                            <div class="form-group col-6 col-sm-6 col-md-6 col-lg-6">     
                                 <label for='estado'>Estado</label>            
                                 <select name="tipo_duracion" v-model="form_modulo.estado" id="estado" class="form-control" :class="{ 'is-invalid': form_modulo.errors.has('estado') }">                                    
                                     <option value="1">Activo</option>
@@ -333,7 +333,7 @@
                         </button>
                     </div>
                     <!-- /.card-body -->
-                    <form @submit.prevent="crearDocumento()">
+                    <form @submit.prevent="crearDocumento()" enctype="multipart/form-data">
                         <div class="modal-body row">
                             <div class="form-group  col-12 col-sm-6 col-md-6 col-lg-6">
                                 <label for='nombre'>Nombre Documento</label>
@@ -344,8 +344,8 @@
                             </div>
                             <div class="form-group  col-12 col-sm-6 col-md-6 col-lg-6">
                                 <label for='ruta'>Documento</label>
-                                <input type="file" id="ruta" name="ruta" required class="form-input" :class="{ 'is-invalid': form_documento.errors.has('ruta') }">
-                                <has-error :form="form_documento" field="ruta"></has-error>
+                                <input type="file" id="ruta" name="ruta" required class="form-input" :class="{ 'is-invalid': form_documento.errors.has('ruta') }"  @change="updateProfile">
+                                <has-error :form="form_documento" field="ruta" ></has-error>
                             </div>
                             
                         </div> 
@@ -393,74 +393,173 @@
                 </div>
             </div>
         </div>
-
         <!-- Modal Preguntas-->
-        <div class="modal fade" id="lista_documentos" tabindex="-1" role="dialog" aria-labelledby="addNewLabel" aria-hidden="true">
+        <div class="modal fade" id="lista_preguntas" tabindex="-1" role="dialog" aria-labelledby="addNewLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title"  id="addNewLabel">Documentos</h5>
+                        <h5 class="modal-title"  id="addNewLabel">Preguntas del Examen </h5>
                         
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
+                        
+                    </div>
+                    <div class="modal-header">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar<i class="fas fa-undo-alt fa-fw"></i></button>
+                        <button class="btn btn-success float-right" @click="newPregunta = true">Agregar Pregunta <i class="fas fa-plus fa-fw"></i></button>
                     </div>
                     <!-- /.card-body -->
-                    <form @submit.prevent="crearPregunta()">
+                    <form v-if="newPregunta == true" @submit.prevent="crearPregunta()">
                         <div class="modal-body row">
                             <div class="form-group  col-12 col-sm-6 col-md-6 col-lg-6">
-                                <label for='nombre'>Nombre Documento</label>
-                                <input v-model="form_documento.nombre" type="text" name="modulo" id="modulo" required
-                                    placeholder="Nombre Documento"
-                                    class="form-control" :class="{ 'is-invalid': form_documento.errors.has('nombre') }">
-                                <has-error :form="form_documento" field="nombre"></has-error>
+                                <label for='pregunta'>Pregunta</label>
+                                <input v-model="form_pregunta.pregunta" type="text" name="modulo" id="modulo" required
+                                    placeholder="Pregunta"
+                                    class="form-control" :class="{ 'is-invalid': form_pregunta.errors.has('pregunta') }">
+                                <has-error :form="form_pregunta" field="pregunta"></has-error>
+                            </div>
+                            <div class="form-group col-12 col-sm-6 col-md-6 col-lg-6">     
+                                <label for='tipo'>Tipo pregunta</label>            
+                                <select name="tipo" v-model="form_pregunta.tipo" id="tipo" class="form-control" :class="{ 'is-invalid': form_pregunta.errors.has('tipo') }">
+                                    
+                                    <option value="1">Respuesta Múltiple</option>
+                                    <option value="2">Falso/Verdadero</option>
+                                    
+                                </select>                                
+                            </div>
+                        </div>
+                        <div v-if="form_pregunta.tipo==1" class="modal-body row">
+                            <div class="form-group  col-12 col-sm-6 col-md-6 col-lg-6">
+                                <label for='a'>Opción A. </label>
+                                <input v-model="form_pregunta.a" type="text" name="a" id="a" required
+                                    placeholder="Opción A"
+                                    class="form-control" :class="{ 'is-invalid': form_pregunta.errors.has('a') }">
+                                <has-error :form="form_pregunta" field="pregunta"></has-error>
                             </div>
                             <div class="form-group  col-12 col-sm-6 col-md-6 col-lg-6">
-                                <label for='ruta'>Documento</label>
-                                <input type="file" id="ruta" name="ruta" required class="form-input" :class="{ 'is-invalid': form_documento.errors.has('ruta') }">
-                                <has-error :form="form_documento" field="ruta"></has-error>
+                                <label for='b'>Opción B. </label>
+                                <input v-model="form_pregunta.b" type="text" name="b" id="b" required
+                                    placeholder="Opción B"
+                                    class="form-control" :class="{ 'is-invalid': form_pregunta.errors.has('b') }">
+                                <has-error :form="form_pregunta" field="b"></has-error>
                             </div>
-                            
+                            <div class="form-group  col-12 col-sm-6 col-md-6 col-lg-6">
+                                <label for='c'>Opción C. </label>
+                                <input v-model="form_pregunta.c" type="text" name="c" id="c" required
+                                    placeholder="Opción C"
+                                    class="form-control" :class="{ 'is-invalid': form_pregunta.errors.has('c') }">
+                                <has-error :form="form_pregunta" field="c"></has-error>
+                            </div>
+                            <div class="form-group  col-12 col-sm-6 col-md-6 col-lg-6">
+                                <label for='d'>Opción D. </label>
+                                <input v-model="form_pregunta.d" type="text" name="d" id="d" 
+                                    placeholder="Opción D"
+                                    class="form-control" :class="{ 'is-invalid': form_pregunta.errors.has('d') }">
+                                <has-error :form="form_pregunta" field="d"></has-error>
+                            </div>
+                            <div class="form-group  col-12 col-sm-6 col-md-6 col-lg-6">
+                                <label for='e'>Opción E. </label>
+                                <input v-model="form_pregunta.e" type="text" name="e" id="e" 
+                                    placeholder="Opción E"
+                                    class="form-control" :class="{ 'is-invalid': form_pregunta.errors.has('e') }">
+                                <has-error :form="form_pregunta" field="e"></has-error>
+                            </div>
+                            <div class="form-group  col-12 col-sm-6 col-md-6 col-lg-6">
+                                <label for='f'>Opción F. </label>
+                                <input v-model="form_pregunta.f" type="text" name="f" id="f" 
+                                    placeholder="Opción F"
+                                    class="form-control" :class="{ 'is-invalid': form_pregunta.errors.has('f') }">
+                                <has-error :form="form_pregunta" field="f"></has-error>
+                            </div>
+                            <div class="form-group col-6 col-sm-2 col-md-2 col-lg-2">     
+                                <label for='respuesta'>Respuesta</label>            
+                                <select name="respuesta" v-model="form_pregunta.respuesta" id="respuesta" class="form-control" :class="{ 'is-invalid': form_pregunta.errors.has('respuesta') }">
+                                    
+                                    <option value="a">A</option>
+                                    <option value="b">B</option>
+                                    <option value="c">C</option>
+                                    <option value="d">D</option>
+                                    <option value="e">E</option>
+                                    <option value="f">F</option>
+                                </select>                                
+                            </div>
                         </div> 
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-                            <button v-show="editmodeDocumento" type="submit" class="btn btn-success">Actualizar</button>
-                            <button v-show="!editmodeDocumento" type="submit" class="btn btn-primary">Crear</button>
+                        <div v-else class="modal-body row" >
+                            <div class="form-group col-6 col-sm-6 col-md-6 col-lg-6" v-if="form_pregunta.tipo == 1 || form_pregunta.tipo == 2">     
+                                <label for='respuesta'>Respuesta</label>            
+                                <select name="respuesta" v-model="form_pregunta.respuesta" id="respuesta" class="form-control" :class="{ 'is-invalid': form_pregunta.errors.has('respuesta') }" required>
+                                    
+                                    <option value="V">Verdadero</option>
+                                    <option value="F">Falso</option>
+                                   
+                                </select>                                
+                            </div>
+                        </div>
+                        <div class="modal-footer" >
+                            <button type="button" class="btn btn-danger" @click="newPregunta = false">Regresar</button>
+                            <button v-show="editmodePregunta" type="submit" class="btn btn-success">Actualizar</button>
+                            <button v-show="!editmodePregunta" type="submit" class="btn btn-primary">Crear</button>
                         </div>
 
                     </form>
-                    <div class="modal-body row">
-                        <div class="card-body table-responsive p-2">
-                            <table class="table table-hover">
-                                <tbody>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Documento</th>
-                                        <th>Ver</th>
-                                        <th></th>               
-                                        <!-- <th>Registrado</th>
-                                        <th>Modificado</th>-->
-                                    </tr>
-                                    
-                                    <tr v-for="documento in documentos.data" :key="documento.id">
-                                        <td>{{documento.id}}</td>
-                                        <td>{{documento.nombre}}</td>                                   
-                                        <td><a class="btn btn-info" v-bind:href="'documentos/'+ documento.ruta" target="_blank">
-                                            <i class="fas fa-eye"></i>
-                                            Ver</a>
-                                        </td>   
-                                        <!-- <td>{{curso.created_at | myDate}}</td>
-                                        <td>{{curso.update_at | myDate}}</td>-->
-                                    
-                                        <td>
-                                            <a href="#" @click="borrarDocumento(documento.id)">
+                    <div v-if="newPregunta == false">
+                        <div  class="modal-body row ml-1" v-for="pregunta in preguntas.data" :key="pregunta.id">
+                            <div class="card w-100 col-10" >
+                                <div class="card-header">
+                                    {{pregunta.pregunta}}
+                                </div>
+                                <ul v-if="pregunta.tipo == 1" class="list-group list-group-flush" style="line-height: 1 !important;">
+                                    <li v-if="pregunta.a" class="list-group-item" :class="{ 'green': pregunta.respuesta == 'a' }">
+                                        <span>A. {{pregunta.a}}</span>
+                                    </li>
+                                    <li v-if="pregunta.b" class="list-group-item" :class="{ 'green': pregunta.respuesta == 'b' }">
+                                        <span>B. {{pregunta.b}}</span>
+                                    </li>
+                                    <li v-if="pregunta.c" class="list-group-item" :class="{ 'green': pregunta.respuesta == 'c' }">
+                                        <span>C. {{pregunta.c}}</span>
+                                    </li>
+                                    <li v-if="pregunta.d" class="list-group-item" :class="{ 'green': pregunta.respuesta == 'd' }">
+                                        <span>D. {{pregunta.d}}</span>
+                                    </li>
+                                    <li v-if="pregunta.e" class="list-group-item" :class="{ 'green': pregunta.respuesta == 'e' }">
+                                        <span>E. {{pregunta.e}}</span>
+                                    </li>
+                                    <li v-if="pregunta.f" class="list-group-item" :class="{ 'green': pregunta.respuesta == 'f' }">
+                                        <span>F. {{pregunta.f}}</span>
+                                    </li>
+                                </ul>
+                                <ul v-else class="list-group list-group-flush" style="line-height: 0.6 !important;">
+                                    <li class="list-group-item" :class="{ 'green': pregunta.respuesta == 'V' }">
+                                        <span>Verdadero</span>
+                                    </li>
+                                    <li class="list-group-item" :class="{ 'green': pregunta.respuesta == 'F' }">
+                                        <span>Falso</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-2 align-middle">
+                                
+                                <a href="#" @click="borrarPregunta(pregunta.id)">
+                                    <i class="fa fa-trash red"></i>
+                                </a>
+                            </div>
+                            <!--
+                            <div class="card-body  p-2">
+                                <div class="row" v-for="pregunta in preguntas.data" :key="pregunta.id">
+                                    <div class="card-body  p-2">
+                                        <div class="col-10">
+                                            {{pregunta.pregunta}}
+                                        </div>
+                                        <div class="col-2">
+                                            <a href="#" @click="borrarPregunta(pregunta.id)">
                                                 <i class="fa fa-trash red"></i>
                                             </a>
-
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table> 
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -477,6 +576,7 @@
                 editmodeModule: false,
                 editmodeDocumento: false,
                 editmodePregunta: false,
+                newPregunta: false,
                 cursos : {},
                 curso: {},
                 modulos: {},
@@ -489,7 +589,7 @@
                 tipos_duracion: {},
                 filtro_tipo: '',
                 id_curso: '',
-
+                id_modulo: '',
                 form: new Form({
                     id:'',
                     nombre : '',
@@ -522,27 +622,29 @@
                 form_pregunta: new Form({
                     id:'',                   
                     id_modulo: '',
-                    nombre: '',
-                    ruta: ''                                              
+                    tipo: '',
+                    pregunta: '',
+                    respuesta: ''  ,
+                    a: '' , b: '' , c: '' , d: ''  ,
+                    e: '' , f: ''                               
                 })
             }
         },
         methods: {
             getResults(page = 1) {
-                axios.get('api/curso?page=' + page)
+                axios.get(this.$parent.ruta + 'api/curso?page=' + page)
                 .then(response => {
                     this.cursos = response.data;
                 });
             },
 
             getResultsModulos(page = 1) {
-                axios.get('api/modulo?page=' + page)
+                axios.get(this.$parent.ruta + 'api/modulo?page=' + page)
                 .then(response => {
                     this.modulos = response.data;
                 });
             },
-
-            
+    
 
             ver_modulo(curso){
                 this.curso = curso;
@@ -551,12 +653,12 @@
             },
 
             getModulos(id_curso) {
-                axios.get("api/getModules/"+id_curso).then(({ data }) => (this.modulos = data));
+                axios.get(this.$parent.ruta + "api/getModules/"+id_curso).then(({ data }) => (this.modulos = data));
             },
             crear(){
                 this.$Progress.start();
 
-                this.form.post('api/curso')
+                this.form.post(this.$parent.ruta + 'api/curso')
                 .then(()=>{
                     Fire.$emit('AfterCreate');
                     $('#addNew').modal('hide')
@@ -575,7 +677,7 @@
             editar(){
                 this.$Progress.start();
                 // console.log('Editing data');
-                this.form.put('api/curso/'+this.form.id)
+                this.form.put(this.$parent.ruta + 'api/curso/'+this.form.id)
                 .then(() => {
                     // success
                     $('#addNew').modal('hide');
@@ -617,7 +719,7 @@
 
                         // Send request to the server
                          if (result.value) {
-                                this.form.delete('api/curso/'+id).then(()=>{
+                                this.form.delete(this.$parent.ruta + 'api/curso/'+id).then(()=>{
                                         swal(
                                         'Borrado!',
                                         'Tu registro ha sido borrado.',
@@ -633,8 +735,8 @@
 
             crearModulo(){
                 this.$Progress.start();
-
-                this.form_modulo.post('api/modulo')
+                this.form_modulo.id_curso = this.id_curso;
+                this.form_modulo.post(this.$parent.ruta + 'api/modulo')
                 .then(()=>{
                     Fire.$emit('AfterCreate');
                     $('#addNewModulo').modal('hide')
@@ -654,7 +756,7 @@
             editarModulo(){
                 this.$Progress.start();
                 // console.log('Editing data');
-                this.form_modulo.put('api/modulo/'+this.form_modulo.id)
+                this.form_modulo.put(this.$parent.ruta + 'api/modulo/'+this.form_modulo.id)
                 .then(() => {
                     // success
                     $('#addNewModulo').modal('hide');
@@ -675,6 +777,7 @@
             
             editModalModulo(modulo){
                 this.editmodeModule = true;
+                this.id_
                 this.form_modulo.reset();
                 $('#addNewModulo').modal('show');
                 this.form_modulo.fill(modulo);
@@ -700,7 +803,7 @@
 
                         // Send request to the server
                          if (result.value) {
-                                this.form_modulo.delete('api/modulo/'+id).then(()=>{
+                                this.form_modulo.delete(this.$parent.ruta + 'api/modulo/'+id).then(()=>{
                                         swal(
                                         'Borrado!',
                                         'Tu registro ha sido borrado.',
@@ -715,6 +818,7 @@
             },
 
             ver_documentos(modulo) {
+                this.id_modulo = modulo;
                 this.form_documento.reset();
                 this.getDocumentos(modulo);
                 $('#lista_documentos').modal('show');
@@ -735,7 +839,7 @@
 
                         // Send request to the server
                          if (result.value) {
-                                this.form_modulo.delete('api/documento/'+id).then(()=>{
+                                this.form_modulo.delete(this.$parent.ruta + 'api/documento/'+id).then(()=>{
                                         swal(
                                         'Borrado!',
                                         'Tu registro ha sido borrado.',
@@ -748,19 +852,65 @@
                          }
                     })
             },
-            crearDocumento(){
 
+            updateProfile(e){
+                let file = e.target.files[0];
+                let reader = new FileReader();
+
+                reader.onloadend = (file) => {
+                    this.form_documento.ruta = reader.result;
+                }
+                reader.readAsDataURL(file);
+            },
+            crearDocumento(){
+                this.$Progress.start();
+                this.form_documento.id_modulo = this.id_modulo;
+                this.form_documento.post(this.$parent.ruta + 'api/documento')
+                .then(()=>{
+                    Fire.$emit('AfterCreate');
+                    $('#lista_documentos').modal('hide')
+
+                    toast({
+                        type: 'success',
+                        title: 'Documento creado correctamente'
+                        })
+                    this.$Progress.finish();
+                    this.newPregunta = false;
+
+                })
+                .catch(()=>{
+
+                })
             },
             ver_preguntas(modulo) {
-                this.form_preguntas.reset();
+                this.form_pregunta.reset();
                 this.getPreguntas(modulo);
+                this.id_modulo = modulo;
                 $('#lista_preguntas').modal('show');
                // console.log('documentos');
-               // console.log(this.documentos);
+               console.log(this.preguntas);
             },
+           
             crearPregunta(){
+                this.$Progress.start();
+                this.form_pregunta.id_modulo = this.id_modulo;
+                this.form_pregunta.post(this.$parent.ruta + 'api/pregunta')
+                .then(()=>{
+                    Fire.$emit('AfterCreate');
+                    $('#lista_preguntas').modal('hide')
 
+                    toast({
+                        type: 'success',
+                        title: 'Pregunta creado correctamente'
+                        })
+                    this.$Progress.finish();
+                    this.newPregunta = false;
+                })
+                .catch(()=>{
+
+                })
             },
+
             borrarPregunta(id){
                 swal({
                     title: 'Estas seguro?',
@@ -774,7 +924,7 @@
 
                         // Send request to the server
                          if (result.value) {
-                                this.form_modulo.delete('api/pregunta/'+id).then(()=>{
+                                this.form_modulo.get(this.$parent.ruta + 'api/borrarPregunta/'+id).then(()=>{
                                         swal(
                                         'Borrado!',
                                         'Tu registro ha sido borrado.',
@@ -785,12 +935,13 @@
                                     swal("Failed!", "Algo ha salido mal.", "warning");
                                 });
                          }
+                         this.cargar();
                     })
             },
 
             cargar(){
                 if(this.$gate.isAdminOrAuthor()){
-                    axios.get("api/curso").then(({ data }) => (this.cursos = data));
+                    axios.get(this.$parent.ruta + "api/curso").then(({ data }) => (this.cursos = data));
                 }
             },
 
@@ -798,7 +949,7 @@
                 
                
                 let me = this;
-                 axios.get("api/categoria")
+                 axios.get(this.$parent.ruta + "api/categoria")
                  .then(function (response) {
                     let auxCats = response.data.data;                    
                    
@@ -814,7 +965,7 @@
             getTutores() {               
                
                 let me = this;
-                 axios.get("api/getTutors")
+                 axios.get(this.$parent.ruta + "api/getTutors")
                  .then(function (response) {
                     let auxTuts = response.data.users;                    
                     console.log(response)
@@ -828,10 +979,10 @@
                 });
             },
             getDocumentos(id_modulo) {               
-               axios.get("api/getDocumentos/"+id_modulo).then(({ data }) => (this.documentos = data));
+               axios.get(this.$parent.ruta + "api/getDocumentos/"+id_modulo).then(({ data }) => (this.documentos = data));
             },
             getPreguntas(id_modulo) {               
-               axios.get("api/getPreguntas/"+id_modulo).then(({ data }) => (this.preguntas = data));
+               axios.get(this.$parent.ruta + "api/getPreguntas/"+id_modulo).then(({ data }) => (this.preguntas = data));
             },
             updateFoto(e){
                 let file = e.target.files[0];
@@ -857,16 +1008,14 @@
         created() {
             this.getCategorias();
             this.getTutores();
-            this.tipos_duracion[0] = 'Horas';
-            this.tipos_duracion[1] = 'Días';
-            this.tipos_duracion[2] = 'Meses';
+           
             let me = this;
             Fire.$on('searching',() => {
 
                 let query = this.$parent.search;
 
                 if(me.id_curso){
-                    axios.get('api/findModulo?q=' + query)
+                    axios.get(this.$parent.ruta + 'api/findModulo?q=' + query)
                     .then((data) => {
                         this.cursos = data.data
                     })

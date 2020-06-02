@@ -40,9 +40,18 @@ class DocumentoController extends Controller
     {
         $this->validate($request,[
             'nombre' => 'required|max:450'
-            , 'ruta' => 'required|max:450'
+            , 'ruta' => 'required'
         ]);
+        
+        
+        $name = time().'.' . explode('/', explode(':', substr($request->ruta, 0, strpos($request->ruta, ';')))[1])[1];
 
+        \Image::make($request->ruta)->save(public_path('documentos/').$name);
+        $request->merge(['ruta' => $name]);
+
+        
+
+      
         return Documento::create([
             'nombre' => $request['nombre']
             , 'ruta' => $request['ruta']
@@ -95,6 +104,11 @@ class DocumentoController extends Controller
         
         $documento->delete();
 
+        /*
+        $userPhoto = public_path('documentos/').$currentPhoto;
+        if(file_exists($userPhoto)){
+            @unlink($userPhoto);
+        }*/
         return ['message' => 'Documento eliminado'];
     }
 

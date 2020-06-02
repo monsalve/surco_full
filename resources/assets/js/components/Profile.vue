@@ -17,15 +17,15 @@
             <div class="col-md-12 mt-3">
                 <div class="card card-widget widget-user">
                 <!-- Add the bg color to the header using any of the bg-* classes -->
-                <div class="widget-user-header text-white" style="background-image:url('./img/user-cover.jpg')">
-                    <h3 class="widget-user-username">{{this.form.name}}</h3>
+                <div class="widget-user-header text-white" style="background-image:url('img/user-cover.jpg')">
+                    <h3 class="widget-user-username">{{this.form.name}}</h3> 
                     <h5 class="widget-user-desc">{{this.form.type}}</h5>
                 </div>
                 <div class="widget-user-image">
                     <img class="img-circle" :src="getProfilePhoto()" alt="User Avatar">
                 </div>
                 <div class="card-footer">
-                    
+                     
                     <!-- /.row -->
                 </div>
                 </div>
@@ -150,7 +150,7 @@
                 if(this.form.password == ''){
                     this.form.password = undefined;
                 }
-                this.form.put('api/profile')
+                this.form.put(this.$parent.ruta + 'api/profile')
                 .then(()=>{
                      Fire.$emit('AfterCreate');
                     this.$Progress.finish();
@@ -181,7 +181,7 @@
         },
 
         created() {
-            axios.get("api/profile")
+            axios.get(this.$parent.ruta + "api/profile")
             .then(({ data }) => (this.form.fill(data)));
         }
     }

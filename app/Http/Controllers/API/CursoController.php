@@ -42,14 +42,10 @@ class CursoController extends Controller
             'nombre'            => 'required|string|max:450'
             , 'categoria'       => 'required|integer|max:11'
             , 'tutor'           => 'required|integer|max:11'
-            , 'duracion'        => 'required|integer|max:11'
-            , 'tipo_duracion'   => 'required|string|max:300'
-            , 'img'             => 'required|string|max:450'
-            , 'valor'           => 'required|numeric'
+            , 'duracion'        => 'required|integer'
+            , 'tipo_duracion'   => 'required|string|max:300'            
             , 'descripcion'     => 'required|string'
-            , 'tipo'            => 'required|integer|max:11'
-            , 'validez'         => 'required|integer|max:11'
-            , 'tipo_validez'    => 'required|integer|max:11'
+           
         ]);
 
         return Curso::create([
@@ -93,14 +89,9 @@ class CursoController extends Controller
             'nombre'            => 'required|string|max:450'
             , 'categoria'       => 'required|integer|max:11'
             , 'tutor'           => 'required|integer|max:11'
-            , 'duracion'        => 'required|integer|max:11'
+            , 'duracion'        => 'required|integer'
             , 'tipo_duracion'   => 'required|string|max:300'
-            , 'img'             => 'required|string|max:450'
-            , 'valor'           => 'required|numeric'
-            , 'descripcion'     => 'required|string'
-            , 'tipo'            => 'required|integer|max:11'
-            , 'validez'         => 'required|integer|max:11'
-            , 'tipo_validez'    => 'required|integer|max:11'
+            
         ]);
 
         $curso->update($request->all());
@@ -137,5 +128,13 @@ class CursoController extends Controller
         }
 
         return $cursos;
+    }
+
+    public function getCurso ($id)
+    {
+       
+        $curso = Curso::findOrFail($id);
+
+        return $curso;
     }
 }
