@@ -64,7 +64,7 @@
                     <span class="icon-unlock-alt"></span> Iniciar sesión
                   </a>
                   <a href="{{ route('register') }}" class="small btn btn-primary px-4 py-2 rounded-0">
-                    <span class="icon-users"></span> Registrate
+                    <span class="icon-users"></span> Regístrate
                   </a>
                 </div>
               @else
@@ -115,7 +115,7 @@
                       <a href="#nosotros" class="nav-link text-left">Nosotros</a>
                     </li>
                     <li>
-                      <a href="/oferta" class="nav-link text-left" click='alert()'>Cursos</a>
+                      <a href="oferta" class="nav-link text-left" >Cursos</a>
                     </li>  
                     <li>
                       <a href="/diplomados" class="nav-link text-left">Diplomados</a>

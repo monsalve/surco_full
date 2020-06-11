@@ -31,7 +31,7 @@
                     <div class="course-1-item">
                         <figure class="thumnail">
                           <a href="/detalle/{{ $curso->id}}">
-                            <img src="img/{{$curso->img ? $curso->img : 'course_2.jpg'}}" alt="Image" class="img-fluid">
+                            <img src="img/cursos/{{$curso->img ? $curso->img : 'course_2.jpg'}}" alt="Image" class="img-fluid">
                           </a>
                          
                           <div class="category" style="background: #d86a0b;"> Curso en <h3>{{$curso->nombre}}</h3></div>  

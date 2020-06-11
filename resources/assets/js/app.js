@@ -110,7 +110,8 @@ const app = new Vue({
     router,
     data: {
         search: '',
-        ruta: '/new_surcoestudios/laravStart/public/'
+        //ruta: '/new_surcoestudios/laravStart/public/'
+        ruta: ''
     },
     methods: {
         searchit: _.debounce(() => {

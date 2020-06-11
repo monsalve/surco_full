@@ -36,8 +36,11 @@ Route::namespace('API')->group(function () {
     Route::get('getModules/{id_curso}', 'ModuloController@getModules');
     Route::get('getDocumentos/{id_modulo}', 'DocumentoController@getDocumentos');
     Route::get('getPreguntas/{id_modulo}', 'PreguntaController@getPreguntas');
+    Route::get('getPreguntasArray/{id_modulo}', 'PreguntaController@getPreguntasArray');    
     Route::get('borrarPregunta/{id_modulo}', 'PreguntaController@borrarPregunta');
     Route::put('profile', 'UserController@updateProfile');
+    Route::get('getResultModules/{id_inscripcion}/{id_curso}', 'ResultadoController@getResultModules');
+    
     Route::get('inscribirme/{id_curso}', 'InscripcionController@inscribirme');
     Route::get('getInscripciones', 'InscripcionController@getInscripciones');
     Route::get('activaInscripcion/{id}', 'InscripcionController@activa');
@@ -51,5 +54,5 @@ Route::namespace('API')->group(function () {
     Route::get('findModulo', 'ModuloController@search');
     Route::get('findInscripcion', 'InscripcionController@search');    
     
-    
+    Route::post('responderPreguntas', 'ResultadoController@responder');    
 });

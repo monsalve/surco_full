@@ -193,7 +193,7 @@
 
                         // Send request to the server
                          if (result.value) {
-                            axios.get("api/activaInscripcion/"+id)
+                            axios.get(this.$parent.ruta +"api/activaInscripcion/"+id)
                             .then(function (data) {
                                 me.inscripciones = data.inscripciones;
                                 swal(
@@ -210,7 +210,7 @@
             createUser(){
                 this.$Progress.start();
 
-                this.form.post('api/user')
+                this.form.post(this.$parent.ruta +'api/user')
                 .then(()=>{
                     Fire.$emit('AfterCreate');
                     $('#addNew').modal('hide')
@@ -230,7 +230,7 @@
         created() {
             Fire.$on('searching',() => {
                 let query = this.$parent.search;
-                axios.get('api/findInscripcion?q=' + query)
+                axios.get(this.$parent.ruta +'api/findInscripcion?q=' + query)
                 .then((data) => {
                     this.inscripciones = data.data
                 })

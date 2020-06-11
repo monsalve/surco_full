@@ -3,7 +3,7 @@
       <div class="row align-items-end">
         <div class="col-lg-7">
           <h2 class="mb-0">Contáctenos</h2>
-          <p>Escribenos a través de nuestro formulario de contacto o a traves de los opciones que te ofrecemos a continuación.</p>
+          <p>Escribenos a través de nuestro formulario de contacto o a través de los opciones que te ofrecemos a continuación.</p>
         </div>
       </div>
     </div>

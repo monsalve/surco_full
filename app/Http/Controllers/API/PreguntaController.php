@@ -152,4 +152,26 @@ class PreguntaController extends Controller
 
         return $preguntas;
     }
+
+    public function getPreguntasArray ($id_modulo)
+    {
+        $preguntas = Pregunta::where('id_modulo','=',$id_modulo)->orderBy('id','asc')->paginate(200);
+        
+        $aux_preguntas = array();
+        
+        foreach($preguntas as $pregunta){    
+            
+            $aux_preguntas[] = array($pregunta->id, $pregunta->respuesta);     
+        }    
+            
+        $aux2 = array();
+        $respuestas = array();
+        foreach($aux_preguntas as $rc){
+            $aux2[$rc[0]] = '';
+            $respuestas[$rc[0]] = $rc[1];
+        }
+        return ["preguntas" => $preguntas, "listado_respuestas" => $aux2, "respuestas" => $respuestas ];
+    }
+
+    
 }

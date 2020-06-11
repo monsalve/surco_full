@@ -336,11 +336,11 @@
                     <form @submit.prevent="crearDocumento()" enctype="multipart/form-data">
                         <div class="modal-body row">
                             <div class="form-group  col-12 col-sm-6 col-md-6 col-lg-6">
-                                <label for='nombre'>Nombre Documento</label>
-                                <input v-model="form_documento.nombre" type="text" name="modulo" id="modulo" required
+                                <label for='nombre_doc'>Nombre Documento</label>
+                                <input v-model="form_documento.nombre" type="text" name="nombre_doc" id="nombre_doc" required
                                     placeholder="Nombre Documento"
                                     class="form-control" :class="{ 'is-invalid': form_documento.errors.has('nombre') }">
-                                <has-error :form="form_documento" field="nombre"></has-error>
+                                <has-error :form="form_documento" field="nombre_doc"></has-error>
                             </div>
                             <div class="form-group  col-12 col-sm-6 col-md-6 col-lg-6">
                                 <label for='ruta'>Documento</label>
@@ -1024,7 +1024,7 @@
                     });
                 }
                 else {
-                     axios.get('api/findCurso?q=' + query)
+                     axios.get(this.$parent.ruta + 'api/findCurso?q=' + query)
                     .then((data) => {
                         this.cursos = data.data
                     })

@@ -48,7 +48,7 @@
                 </div>
                 <div class="feature-1-content">
                   <h2>Aprendisaze a tu ritmo</h2>
-                  <p>Tu defines los horarios y tiempos, la plataforma con todos sus contendidos esta disponible para 24/7.</p>
+                  <p>Tú defines los horarios y tiempos, la plataforma está disponible con todos sus contenidos para ti todos los días 24/7</p>
                    <!--<p><a href="#" class="btn btn-primary px-4 rounded-0">Learn More</a></p>-->
                 </div>
               </div>
@@ -60,7 +60,7 @@
                 </div>
                 <div class="feature-1-content">
                   <h2>Instructores Certificados</h2>
-                  <p>Todos nuestros instructores son profesionales son profesionales que cumplen con todos los requerimientos ante estado para validar las certificaciones de tus cursos aprobados.</p>
+                  <p>Todos nuestros instructores están certificados en cada una de sus áreas del conocimiento</p>
                   <!--<p><a href="#" class="btn btn-primary px-4 rounded-0">Learn More</a></p>-->
                 </div>
               </div> 
@@ -72,7 +72,7 @@
                 </div>
                 <div class="feature-1-content">
                   <h2>Convenios Empresariales</h2>
-                  <p>Si deseas contratar paquetes educativos para tu empresa, podemos ofrecerte grandes descuentos en nuestros cursos y diplomados</p>
+                  <p>Si deseas contratar paquetes educativos para tu empresa u organización, SURCOESTUDIOS te ofrece grandes descuentos en nuestros cursos y diplomados</p>
                    <!--<p><a href="#" class="btn btn-primary px-4 rounded-0">Learn More</a></p>-->
                 </div>
               </div> 
@@ -86,7 +86,7 @@
           <div class="row align-items-end">
             <div class="col-lg-7">
               <h2 class="mb-0">Acerca de nostros</h2>
-              <p>Somos Surcoestudio, una entidad educativa, ofrecemos capacitacion, certifiaciones y diplomados.</p>
+              <p>Somos SURCOLOMBIANA DE ESTUDIOS SAS, una entidad educativa que ofrece capacitación y entrenamiento en diferentes áreas del conocimiento</p>
             </div>
           </div>
         </div>

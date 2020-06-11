@@ -99,7 +99,7 @@ class HomeController extends Controller
         $headers = "From: respuesta@surcoestudio.com" . "\r\n";
         $headers = "Content-type:text/html;charset=UTF-8" . "\r\n";
         
-        mail($to, $subject, $message,);
+        mail($to, $subject, $message);
         
         return view('registrado');
     }

@@ -3,7 +3,7 @@
     
     
 
-    <div class="site-section ftco-subscribe-1 site-blocks-cover pb-4" style="background-image: url('img/bg_1.jpg')">
+    <div class="site-section ftco-subscribe-1 site-blocks-cover pb-4" style="background-image: url('/img/bg_1.jpg')">
         <div class="container">
           <div class="row align-items-end">
             <div class="col-lg-7">
