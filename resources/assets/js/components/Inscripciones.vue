@@ -4,7 +4,7 @@
 			<div class="col-md-12">
 				<div class="card">
 					<div class="card-header">
-							<h3 class="card-title">Incripciones</h3>
+							<h3 class="card-title">Inscripciones</h3>
 					</div>
 					<!-- /.card-header -->
 					<div class="card-body">
@@ -26,23 +26,29 @@
 								</tr>
 								<tr v-for="inscripcion in inscripciones.data" :key="inscripcion.id">
 									<td>{{inscripcion.id}}</td>
-									
 									<td>{{inscripcion.name}}</td>
 									<td>{{inscripcion.curso}}</td>
-									<td>{{inscripcion.fecha}} {{inscripcion.estado }}</td>
+									<td>{{inscripcion.fecha}}</td>
 									<td v-if="inscripcion.estado==1">En solicitud</td>
 									<td v-if="inscripcion.estado==2">En progreso</td>
 									<td v-if="inscripcion.estado==3">Finalizado</td>
 									<td v-if="inscripcion.estado==0">Cancelado</td>
-									<td v-if="inscripcion.fec_activa || inscripcion.fec_cancela || inscripcion.fec_termina">{{inscripcion.fec_activa}}</td>
-									<td v-if="inscripcion.estado == 1">
+									<td>
+										<div v-if="inscripcion.estado == 1">
 											<button type="button" class="btn btn-success" @click="aceptarInscripcion(inscripcion.id)">Aceptar</button>
+										</div>
+										<div v-else>
+											{{inscripcion.fec_activa}}
+										</div>
 									</td>
-			
-									<td v-if="inscripcion.estado == 1 || inscripcion.estado == 2">
+									<td>
+										<div v-if="inscripcion.estado == 1 || inscripcion.estado == 2">
 											<button type="button" class="btn btn-danger" @click="cancelarInscripcion(inscripcion.id)">Cancelar</button>
+										</div>
+										<div v-else>
+											{{inscripcion.fec_cancela}}
+										</div>
 									</td>
-									<td v-else>{{inscripcion.fec_cancela}}</td>
 									<td>{{inscripcion.fec_termina}} </td>
 									<td >
 										<a target="_blank" v-if="inscripcion.fec_termina" class="btn btn-info" :href="aux_ruta + 'cepsas/newdiploma.php?id=' + inscripcion.id_alumno + '&curso=' + inscripcion.id+ '&inscripcion=' + inscripcion.id_curso">Certificado Curso</a>  

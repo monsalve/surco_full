@@ -1,128 +1,122 @@
 <template>
-    <div class="container">
-        <div class="row mt-5" v-if="$gate.isAdminOrAuthor()">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Empresas</h3>
+	<div class="container">
+			<div class="row mt-5" v-if="$gate.isAdminOrAuthor()">
+					<div class="col-md-12">
+							<div class="card">
+									<div class="card-header">
+											<h3 class="card-title">Empresas</h3>
 
-                        <div class="card-tools">
-                             <button class="btn btn-success" @click="newModal">Empresa <i class="fas fa-user-plus fa-fw"></i></button>
-                        </div>
-                    </div>
-                    <!-- /.card-header -->
-                    <div class="card-body">
-                        Tipo
-                    </div>
-                    <div class="card-body table-responsive p-0">
-                        <table class="table table-hover">
-                            <tbody>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Empresa</th>
-                                    <th>NIT</th>
-                                    <th>Registrado el</th>
-                                    <th>Modificado el</th>
-                                </tr>
-                                <tr v-for="user in users.data" :key="user.id">
-                                    <td>{{user.id}}</td>
-                                    
-                                    <td>{{user.email}}</td>
-                                    
-                                    <td>{{user.created_at | myDate}}</td>
-                                    <td>{{user.update_at | myDate}}</td>
-                                    <td>
-                                        <a href="#" @click="editModal(user)">
-                                            <i class="fa fa-edit blue"></i>
-                                        </a>
-                                        /
-                                        <a href="#" @click="deleteUser(user.id)">
-                                            <i class="fa fa-trash red"></i>
-                                        </a>
+											<div class="card-tools">
+														<button class="btn btn-success" @click="newModal">Empresa <i class="fas fa-empresa-plus fa-fw"></i></button>
+											</div>
+									</div>
+									<!-- /.card-header -->
+									<div class="card-body">
+											Tipo
+									</div>
+									<div class="card-body table-responsive p-0">
+											<table class="table table-hover">
+													<thead>
+														<tr>
+																<th>ID</th>
+																<th>Empresa</th>
+																<th>NIT</th>
+																<th>Registrado el</th>
+																<th>Modificado el</th>
+																<th></th>
+														</tr>
+													</thead>
+													<tbody v-if="empresas.total>0">
+														<tr v-for="empresa in empresas.data" :key="empresa.id">
+																<td>{{empresa.id}}</td>
+																
+																<td>{{empresa.empresa}}</td>
+																<td>{{empresa.nit}}</td>
+																
+																<td>{{empresa.created_at | myDate}}</td>
+																<td>{{empresa.update_at | myDate}}</td>
+																<td>
+																		<a href="#" @click="editModal(empresa)">
+																				<i class="fa fa-edit blue"></i>
+																		</a>
+																		/
+																		<a href="#" @click="deleteEmpresa(empresa.id)">
+																				<i class="fa fa-trash red"></i>
+																		</a>
 
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- /.card-body -->
-                    <div class="card-footer">
-                        <pagination :data="users" @pagination-change-page="getResults"></pagination>
-                    </div>
-                </div>
-            <!-- /.card -->
-            </div>
-        </div>
+																</td>
+														</tr>
+													</tbody>
+													<tbody v-else>
+														<tr>
+															<td colspan="5">
+																No se han registrado datos
+															</td>	
+														</tr>
+													</tbody>
+											</table>
+									</div>
+									<!-- /.card-body -->
+									<div class="card-footer">
+											<pagination :data="empresas" @pagination-change-page="getResults"></pagination>
+									</div>
+							</div>
+					<!-- /.card -->
+					</div>
+			</div>
 
-        <div v-if="!$gate.isAdminOrAuthor()">
-            <not-found></not-found>
-        </div>
+			<div v-if="!$gate.isAdminOrAuthor()">
+					<not-found></not-found>
+			</div>
 
-    <!-- Modal -->
-        <div class="modal fade" id="addNew" tabindex="-1" role="dialog" aria-labelledby="addNewLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" v-show="!editmode" id="addNewLabel">Agregar Usuario</h5>
-                        <h5 class="modal-title" v-show="editmode" id="addNewLabel">Actualizar Usuario</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <form @submit.prevent="editmode ? updateUser() : createUser()">
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <input v-model="form.name" type="text" name="name"
-                                    placeholder="Nombre"
-                                    class="form-control" :class="{ 'is-invalid': form.errors.has('name') }">
-                                <has-error :form="form" field="name"></has-error>
-                            </div>
+	<!-- Modal -->
+			<div class="modal fade" id="addNew" tabindex="-1" role="dialog" aria-labelledby="addNewLabel" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+							<div class="modal-content">
+									<div class="modal-header">
+											<h5 class="modal-title" v-show="!editmode" id="addNewLabel">Agregar Empresa</h5>
+											<h5 class="modal-title" v-show="editmode" id="addNewLabel">Actualizar Empresa</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+											</button>
+									</div>
+									<form @submit.prevent="editmode ? updateEmpresa() : createEmpresa()">
+											<div class="modal-body">
+													<div class="form-group">
+															<input v-model="form.empresa" type="text" name="empresa"
+																	placeholder="Nombre"
+																	class="form-control" :class="{ 'is-invalid': form.errors.has('empresa') }">
+															<has-error :form="form" field="empresa"></has-error>
+													</div>
 
-                            <div class="form-group">
-                                <input v-model="form.email" type="email" name="email"
-                                    placeholder="Correo"
-                                    class="form-control" :class="{ 'is-invalid': form.errors.has('email') }">
-                                <has-error :form="form" field="email"></has-error>
-                            </div>
+													<div class="form-group">
+															<input v-model="form.nit" type="nit" name="nit"
+																	placeholder="Correo"
+																	class="form-control" :class="{ 'is-invalid': form.errors.has('nit') }">
+															<has-error :form="form" field="nit"></has-error>
+													</div>
 
-                            <div class="form-group">
-                                <textarea v-model="form.bio" name="bio" id="bio"
-                                placeholder="Informacón (Opcional)"
-                                class="form-control" :class="{ 'is-invalid': form.errors.has('bio') }"></textarea>
-                                <has-error :form="form" field="bio"></has-error>
-                            </div>
+													<div class="form-group">
+															<select name="estado" v-model="form.estado" id="estado" class="form-control" :class="{ 'is-invalid': form.errors.has('estado') }">
+																	<option value="">Selecione el estado</option>
+																	<option value="0">Activo</option>
+																	<option value="1">Inactivo</option>
+															</select>
+															<has-error :form="form" field="type"></has-error>
+													</div>
+											</div>
+											<div class="modal-footer">
+													<button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+													<button v-show="editmode" type="submit" class="btn btn-success">Actualizar</button>
+													<button v-show="!editmode" type="submit" class="btn btn-primary">Crear</button>
+											</div>
 
+									</form>
 
-                            <div class="form-group">
-                                <select name="type" v-model="form.type" id="type" class="form-control" :class="{ 'is-invalid': form.errors.has('type') }">
-                                    <option value="">Selecione el rol de usuario</option>
-                                    <option value="admin">Administrador</option>
-                                    <option value="user">Estudiante</option>
-                                    <option value="author">Tutor</option>
-                                </select>
-                                <has-error :form="form" field="type"></has-error>
-                            </div>
-
-                            <div class="form-group">
-                                <label for='password'>Clave</label>
-                                <input v-model="form.password" type="password" name="password" id="password"
-                                class="form-control" :class="{ 'is-invalid': form.errors.has('password') }">
-                                <has-error :form="form" field="password"></has-error>
-                            </div>
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-                            <button v-show="editmode" type="submit" class="btn btn-success">Actualizar</button>
-                            <button v-show="!editmode" type="submit" class="btn btn-primary">Crear</button>
-                        </div>
-
-                    </form>
-
-                </div>
-            </div>
-        </div>
-    </div>
+							</div>
+					</div>
+			</div>
+	</div>
 </template>
 
 <script>
@@ -130,29 +124,26 @@
         data() {
             return {
                 editmode: false,
-                users : {},
+                empresas : {},
                 form: new Form({
-                    id:'',
-                    name : '',
-                    email: '',
-                    password: '',
-                    type: '',
-                    bio: '',
-                    photo: ''
+									id:'',
+									empresa : '',
+									nit: '',
+									estado: '',
                 })
             }
         },
         methods: {
             getResults(page = 1) {
-                axios.get(this.$parent.ruta + 'api/user?page=' + page)
+                axios.get(this.$parent.ruta + 'api/empresa?page=' + page)
                 .then(response => {
-                    this.users = response.data;
+                    this.empresas = response.data;
                 });
             },
-            updateUser(){
+            updateEmpresa(){
                 this.$Progress.start();
                 // console.log('Editing data');
-                this.form.put(this.$parent.ruta + 'api/user/'+this.form.id)
+                this.form.put(this.$parent.ruta + 'api/empresa/'+this.form.id)
                 .then(() => {
                     // success
                     $('#addNew').modal('hide');
@@ -169,18 +160,18 @@
                 });
 
             },
-            editModal(user){
+            editModal(empresa){
                 this.editmode = true;
                 this.form.reset();
                 $('#addNew').modal('show');
-                this.form.fill(user);
+                this.form.fill(empresa);
             },
             newModal(){
                 this.editmode = false;
                 this.form.reset();
                 $('#addNew').modal('show');
             },
-            deleteUser(id){
+            deleteEmpresa(id){
                 swal({
                     title: 'Are you sure?',
                     text: "You won't be able to revert this!",
@@ -193,7 +184,7 @@
 
                         // Send request to the server
                          if (result.value) {
-                                this.form.delete(this.$parent.ruta + 'api/user/'+id).then(()=>{
+                                this.form.delete(this.$parent.ruta + 'api/empresa/'+id).then(()=>{
                                         swal(
                                         'Deleted!',
                                         'Your file has been deleted.',
@@ -206,23 +197,23 @@
                          }
                     })
             },
-            loadUsers(){
+            loadEmpresas(){
                 if(this.$gate.isAdminOrAuthor()){
-                    axios.get(this.$parent.ruta + "api/user").then(({ data }) => (this.users = data));
+                    axios.get(this.$parent.ruta + "api/empresa").then(({ data }) => (this.empresas = data));
                 }
             },
 
-            createUser(){
+            createEmpresa(){
                 this.$Progress.start();
 
-                this.form.post(this.$parent.ruta + 'api/user')
+                this.form.post(this.$parent.ruta + 'api/empresa')
                 .then(()=>{
                     Fire.$emit('AfterCreate');
                     $('#addNew').modal('hide')
 
                     toast({
                         type: 'success',
-                        title: 'User Created in successfully'
+                        title: 'Empresa Created in successfully'
                         })
                     this.$Progress.finish();
 
@@ -235,19 +226,19 @@
         created() {
             Fire.$on('searching',() => {
                 let query = this.$parent.search;
-                axios.get(this.$parent.ruta + 'api/findUser?q=' + query)
+                axios.get(this.$parent.ruta + 'api/findEmpresa?q=' + query)
                 .then((data) => {
-                    this.users = data.data
+                    this.empresas = data.data
                 })
                 .catch(() => {
 
                 })
             })
-           this.loadUsers();
+           this.loadEmpresas();
            Fire.$on('AfterCreate',() => {
-               this.loadUsers();
+               this.loadEmpresas();
            });
-        //    setInterval(() => this.loadUsers(), 3000);
+        //    setInterval(() => this.loadEmpresas(), 3000);
         }
 
     }

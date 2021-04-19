@@ -43,22 +43,10 @@ Vue.use(VueRouter)
 
 let routes = [
     { path: '/dashboard', component: require('./components/Dashboard.vue').default },
-    // { path: '/contenedores', component: require('./components/Contenedores.vue').default },
- //   { path: '/especies', component: require('./components/Especies.vue').default },
-  //  { path: '/alimentos', component: require('./components/Alimentos.vue').default },
     { path: '/recursos', component: require('./components/Recursos.vue').default },
     { path: '/usuarios', component: require('./components/Usuarios.vue').default },
-  //  { path: '/siembras', component: require('./components/Siembras.vue').default },
     { path: '/recursos-necesarios', component: require('./components/RecursosNecesarios.vue').default },
     { path: '/informes', component: require('./components/Informes.vue').default },
-  //  { path: '/alimentacion', component: require('./components/Alimentacion.vue').default },
- //   { path: '/ciclo-productivo', component: require('./components/InformeCicloProductivo.vue').default },
- //   { path: '/calidad-agua', component: require('./components/CalidadAgua.vue').default },
-    { path: '/example', component: require('./components/ExampleComponent.vue').default },
-
-  //  { path: '/sedes', component: require('./components/Sedes.vue').default },
-  //  { path: '/torneos', component: require('./components/Torneos.vue').default },
-  //  { path: '/jugadores', component: require('./components/Jugadores.vue').default },
     { path: '/preguntas', component: require('./components/Preguntas.vue').default },
 
 ]
@@ -78,10 +66,6 @@ const router = new VueRouter({
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-//Vue.component('example-component', require('./components/ExampleComponent.vue'));
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
-//Vue.component('dashboard-component', require('./components/Dashboard.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

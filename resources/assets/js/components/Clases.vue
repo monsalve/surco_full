@@ -59,37 +59,37 @@
             <div class="col-md-12" v-else>
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-tools">
-                            <button class="btn btn-danger" @click="id_curso='';">Regresar <i class="fas fa-undo-alt fa-fw"></i></button>
-                        </div>
-                        <b>Cruso: </b><h3 class="card-title">{{curso.curso}}</h3> 
+											<div class="card-tools">
+												<button class="btn btn-danger" @click="id_curso='';">Regresar <i class="fas fa-undo-alt fa-fw"></i></button>
+											</div>
+											<b>Cruso: </b><h3 class="card-title">{{curso.curso}}</h3> 
                     </div>
                      <div class="card-body table-responsive p-0">
                         <table class="table table-hover">
-                            <thead> 
-                                <tr>                                    
-                                    <th>Módulo</th>
-                                    <th>Estado</th>
-                                    <th>Resultado</th>
-                                    <th>Contenido</th>
-                                    <th>Examen</th>                     
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="modulo in modulos" :key="modulo.id">
-                                    <td>{{modulo.modulo}}</td>
-                                    <td v-if="resultados[modulo.id] != ''">
-                                        <div v-if="resultados[modulo.id].resultado > 60">Aprobado</div>
-                                        <div v-else>Sin Aprobar Aun {{resultados[modulo.id].resultado }}</div>
-                                    </td>
-                                    <td v-else>En curso</td>
-                                    <td> ({{resultados[modulo.id].respondidas}} / {{resultados[modulo.id].preguntas}}) ({{resultados[modulo.id].resultado}} %)</td>
-                                    <td><button class="btn btn-info" @click="verModulo(modulo)">Contenido</button></td>
-                                    <td>
-                                        <button class="btn btn-success" @click="verExamen(modulo)">Presentar Examen</button>
-                                    </td>
-                                </tr>
-                            </tbody>
+													<thead> 
+														<tr>                                    
+															<th>Módulo</th>
+															<th>Estado</th>
+															<th>Resultado</th>
+															<th>Contenido</th>
+															<th>Examen</th>                     
+														</tr>
+													</thead>
+													<tbody>
+														<tr v-for="modulo in modulos" :key="modulo.id">
+															<td>{{modulo.modulo}}</td>
+															<td v-if="resultados[modulo.id] != ''">
+																<div v-if="resultados[modulo.id].resultado > 60">Aprobado</div>
+																<div v-else>Sin Aprobar Aun {{resultados[modulo.id].resultado }}</div>
+															</td>
+															<td v-else>En curso</td>
+															<td> ({{resultados[modulo.id].respondidas}} / {{resultados[modulo.id].preguntas}}) ({{resultados[modulo.id].resultado}} %)</td>
+															<td><button class="btn btn-info" @click="verModulo(modulo)">Contenido</button></td>
+															<td>
+																	<button class="btn btn-success" @click="verExamen(modulo)">Presentar Examen</button>
+															</td>
+														</tr>
+													</tbody>
                         </table>
                      </div>
                 </div>

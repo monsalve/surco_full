@@ -179,14 +179,11 @@ class InscripcionController extends Controller
 	public function search ()
 	{
 		if ($search = \Request::get('q')) {
-			$inscripcions = Inscripcion::where(function ($query) use ($search) {
+			$inscripcions = Inscripcion::leftJoin('users', 'inscripciones.id_alumno', 'users.id')->where(function ($query) use ($search) {
 
-				$query->where('nombre', 'LIKE', "%$search%")
-				->orWhere('duracion_tipo', 'LIKE', "%$search%")
-				->orWhere('descripcion', 'LIKE', "%$search%")
-				->orWhere('users.name', 'LIKE', "%$search%")
+				$query->orWhere('users.name', 'LIKE', "%$search%")
 				->orWhere('users.documento', 'LIKE', "%$search%")
-				->join('users', 'inscripciones.id_alumno', 'users.id')
+				
 				;
 			})->paginate(15);
 		} else {
