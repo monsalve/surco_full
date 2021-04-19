@@ -128,7 +128,7 @@
               </div>
               <div class="col-lg-5 ml-auto align-self-center">
                   <h2 class="section-title-underline mb-5">
-                      <span>OBJETIVOS</span>
+                      <span>MISIÓN</span>
                   </h2>
                   <p>Ayudar a empresas, organizaciones, instituciones, profesionales e individuos en el alcance de sus metas de formación, educación y desarrollo. Ofreciendo soluciones de educación a distancia de calidad, adecuadas a sus necesidades.
                   </p>
@@ -142,7 +142,7 @@
             </div>
             <div class="col-lg-5 mr-auto align-self-center order-2 order-lg-1">
                 <h2 class="section-title-underline mb-5">
-                    <span>Visión</span>
+                    <span>VISÓN</span>
                 </h2>
                 <p>Ser reconocidos por nuestros altos niveles de calidad y la excelencia en el desarrollo de nuestros objetivos. En un futuro pretendemos trabajar en altos estándares de calidad de nuestros servicios educativos con alta satisfacción de cada uno de nuestros clientes, ofertando cada vez más y mejor nuestros servicios.</p>
                 
@@ -151,16 +151,44 @@
         </div>
       </div>
 
+    <div class="site-section" style="margin-top: -4em;">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 ml-auto align-self-left">
+              <h2 class="section-title-underline mb-5">
+                <span>OBJETIVOS</span>
+              </h2>                            
+              <p>
+                <ul class="list-group">
+                    <li>Ofrecer diplomados y cursos a distancia, actualizados y de relevancia profesional</li>
+                    <li>Formar personas exitosas, con sólidos conocimientos, alta calidad laboral y ética profesional, por medio de nuestros diplomados y cursos</li>
+                    <li>Ofrecer diplomados y cursos brindando material educativo, accesible para toda la comunidad, para promover el autodesarrollo profesional</li>
+                    <li>Ayudar a las organizaciones eficaz y eficientemente con sus proyectos de capacitación</li>
+                </ul>
+              </p>
+            </div>
+          </div>
+        </div>
+    </div>
       <div class="site-section" style="margin-top: -4em;">
         <div class="container">
           <div class="row">
             <div class="col-lg-12 ml-auto align-self-left">
               <h2 class="section-title-underline mb-5">
-                <span>Metodología de trabajo</span>
+                <span>METODOLOGÍA DE TRABAJO</span>
               </h2>
-              <p>Somos una organización privada con sede en Puerto Asís-Putumayo, nació en el año 2012 bajo la idea y en respuesta a la necesidad de acercar e integrar la educación sin importar el lugar donde se encuentre el alumno, hemos desarrollado diferentes diplomados, llevando la educación a toda Colombia y Latinoamérica.
+              <p>Todos nuestros diplomados o cursos son a distancia, eso permite que nuestros estudiantes ajusten las fechas y horarios de estudio a su disposición. El diplomado o curso se realiza dentro de nuestra Plataforma Virtual donde se desarrollarán distintas actividades como.
               </p>
-              <p>Empresa Inscrita según Matrícula Mercantil Nro. 45541-16, con fecha 30 de marzo de 2012 y con licencia de funcionamiento o Resolución Nro. 03 y actualizada según resolución 005 de 30 de noviembre de 2017 del municipio de Puerto Asís-Putumayo.</p>
+              <p>
+                <ul class="list-group">
+                    <li >Documentos formatos PDF de acuerdo al diplomado o curso.</li>
+                    <li>Actividades individuales y/o grupales de aplicación práctica semanal y por unidad temática</li>
+                    <li>Foros de discusión propuestos por el docente.</li>
+                    <li>Consulta al docente a través de la Plataforma SURCO.</li>
+                    <li>Material de lectura semanal y por unidad temática</li>
+                    <li>Evaluaciones de conocimientos de única respuesta, de aplicación a los conocimientos adquiridos</li>                    
+                </ul>
+              </p>
             </div>
           </div>
         </div>

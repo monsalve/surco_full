@@ -31,10 +31,10 @@
                     <div class="course-1-item">
                         <figure class="thumnail">
                           <a href="/detalle/{{ $curso->id}}">
-                            <img src="img/cursos/{{$curso->img ? $curso->img : 'course_2.jpg'}}" alt="Image" class="img-fluid">
+                            <img src="{{env('APP_URL')}}/img/cursos/{{$curso->img ? $curso->img : 'course_2.jpg'}}" alt="Image" class="img-fluid">
                           </a>
                          
-                          <div class="category" style="background: #d86a0b;"> Curso en <h3>{{$curso->nombre}}</h3></div>  
+                          <div class="category" style="background: #d86a0b; color: white;"> Curso en <h3>{{$curso->nombre}}</h3></div>  
                         </figure>
                         <div class="course-1-content pb-4">
                           <p class="text-left"><b>Categoria:</b>{{$categorias[$curso->categoria]}}</p>
@@ -55,7 +55,7 @@
                         </div>
                         <p class="desc mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique accusantium ipsam.</p>-->
                         
-                          <p><a href="/detalle/{{$curso->id}} " class="btn btn-primary rounded-0 px-4">Ver mas</a></p>
+                          <p><a href="{{env('APP_URL')}}/detalle/{{$curso->id}} " class="btn btn-primary rounded-0 px-4">Ver más</a></p>
                         
                         </div>
                     </div>

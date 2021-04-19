@@ -150,12 +150,16 @@
                 if(this.form.password == ''){
                     this.form.password = undefined;
                 }
+                
                 this.form.put(this.$parent.ruta + 'api/profile')
-                .then(()=>{
-                     Fire.$emit('AfterCreate');
+                .then((res)=>{
+                    console.log(res);
+                    console.log("pasa bn");
+                    Fire.$emit('AfterCreate');
                     this.$Progress.finish();
                 })
                 .catch(() => {
+                    console.log("falla");
                     this.$Progress.fail();
                 });
             },

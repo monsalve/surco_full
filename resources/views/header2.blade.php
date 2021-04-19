@@ -18,22 +18,22 @@
         <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
         <link rel="stylesheet" href="/fonts/icomoon/style.css">
     
-        <link rel="stylesheet" href="/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/css/jquery-ui.css">
-        <link rel="stylesheet" href="/css/owl.carousel.min.css">
-        <link rel="stylesheet" href="/css/owl.theme.default.min.css">
-        <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="{{env('APP_URL')}}/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{env('APP_URL')}}/css/jquery-ui.css">
+        <link rel="stylesheet" href="{{env('APP_URL')}}/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="{{env('APP_URL')}}/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="{{env('APP_URL')}}/css/owl.theme.default.min.css">
     
-        <link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+        <link rel="stylesheet" href="{{env('APP_URL')}}/css/jquery.fancybox.min.css">
     
-        <link rel="stylesheet" href="/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="{{env('APP_URL')}}/css/bootstrap-datepicker.css">
     
-        <link rel="stylesheet" href="/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="{{env('APP_URL')}}/fonts/flaticon/font/flaticon.css">
     
-        <link rel="stylesheet" href="/css/aos.css">
-        <link href="/css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{{env('APP_URL')}}/css/aos.css">
+        <link href="{{env('APP_URL')}}/css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
     
-        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="{{env('APP_URL')}}/css/style.css">
     </head>
     
     <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -64,7 +64,7 @@
                     <span class="icon-unlock-alt"></span> Iniciar sesión
                   </a>
                   <a href="{{ route('register') }}" class="small btn btn-primary px-4 py-2 rounded-0">
-                    <span class="icon-users"></span> Registrate
+                    <span class="icon-users"></span> Regístrate
                   </a>
                 </div>
               @else
@@ -72,7 +72,7 @@
                   <a href="dashboard" class="small btn btn-primary px-4 py-2 rounded-0">
                     <span class="icon-users"></span> Panel Administrativo
                   </a>
-                  <a href="logout"           class="btn btn-outline-danger small ml-3 px-4 py-2 rounded-0 " onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                  <a href="{{env('APP_URL')}}/logout"           class="btn btn-outline-danger small ml-3 px-4 py-2 rounded-0 " onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     <span class="icon-unlock-alt"></span> Salir                    
                  </a>
                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -115,10 +115,10 @@
                       <a href="#nosotros" class="nav-link text-left">Nosotros</a>
                     </li>
                     <li>
-                      <a href="/oferta" class="nav-link text-left">Cursos</a>
+                      <a href="{{env('APP_URL')}}/oferta" class="nav-link text-left">Cursos</a>
                     </li>  
                     <li>
-                      <a href="/diplomados" class="nav-link text-left">Diplomados</a>
+                      <a href="{{env('APP_URL')}}/diplomados" class="nav-link text-left">Diplomados</a>
                     </li>                  
                     <li>
                         <a href="#contact" class="nav-link text-left">Contáctenos</a>

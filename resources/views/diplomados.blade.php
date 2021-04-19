@@ -31,9 +31,9 @@
                     <div class="course-1-item">
                         <figure class="thumnail">
                           <a href="/detalle/{{ $curso->id}}">
-                            <img src="img/{{$curso->img ? $curso->img : 'course_2.jpg'}}" alt="Image" class="img-fluid">
+                            <img src="img/cursos/{{$curso->img ? $curso->img : 'course_2.jpg'}}" alt="Image" class="img-fluid">
                           </a>
-                          <div style="background: #d86a0b;" class="price">$ {{number_format($curso->valor,0)}}</div>
+                          <!--<div style="background: #d86a0b;" class="price">$ {{number_format($curso->valor,0)}}</div>-->
                           <div class="category"> Diplomado en <h3>{{$curso->nombre}}</h3>
                           
                           </div>  
@@ -57,7 +57,7 @@
                         </div>
                         <p class="desc mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique accusantium ipsam.</p>-->
                         
-                          <p><a href="/detalle/{{$curso->id}} " class="btn btn-primary rounded-0 px-4">Ver mas</a></p>
+                          <p><a href="/detalle/{{$curso->id}} " class="btn btn-primary rounded-0 px-4">Ver más</a></p>
                         
                         </div>
                     </div>

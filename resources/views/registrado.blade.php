@@ -30,7 +30,10 @@
                 <h1 class="display-4">Hemos recibido tu solicitud!!!</h1>
                 <p class="lead">En breve nos comunicaremos contigo</p>
                 <hr class="my-4">
-                <p>Te invitamos a que continues conociendo nuestra oferta académica.</p>
+                <p>Recuerda que debes realizar tu pago y enviar el soporte a coordinacion@surcoestudios.com o al Whatsapp 320 468 8543. Debes siempre indicar tu nombre, cédula y el curso o diplomado al cual estás inscrito</p>
+                <p>Una vez realizado tu pago, te daremos acceso a tu formación</p>
+                <p><img style="    max-height: 400px;" src="/img/bancos.jpeg">
+                </p>
                 <a class="btn btn-primary btn-lg" href="/" role="button">Volver al Inicio </a>
               </div>
                 

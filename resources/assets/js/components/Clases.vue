@@ -41,12 +41,14 @@
                                     <td v-if="inscripcion.estado==2">En progreso</td>
                                     <td v-if="inscripcion.estado==3">Finalizado</td>
                                     <td v-if="inscripcion.estado==0">Cancelado</td>
-                                     <td >
+                                     <td v-if="inscripcion.estado==2">
                                         <button class="btn btn-success" @click="irCurso(inscripcion)">Ir al curso</button>
                                     </td>
+                                    <td v-else>
+                                        <button class="btn btn-secondary">Ir al curso</button>
+                                    </td>
                                     <td >
-                                        <a target="_blank" v-if="inscripcion.fec_termina" class="btn btn-info" :href="aux_ruta + 'cepsas/newdiploma.php?id=' + inscripcion.id_alumno + '&curso=' + inscripcion.id+ '&inscripcion=' + inscripcion.id_curso">Certificado test</a>
-                                        <button v-if="inscripcion.fec_termina" class="btn btn-info">Certificado</button>
+                                        <a target="_blank" v-if="inscripcion.fec_termina" class="btn btn-info" :href="aux_ruta + 'cepsas/newdiploma.php?id=' + inscripcion.id_alumno + '&curso=' + inscripcion.id+ '&inscripcion=' + inscripcion.id_curso">Certificado Curso</a>                                        
                                     </td>
                                 </tr>
                             </tbody>
@@ -147,7 +149,7 @@
                                 <table class="table w-100 border-bottom" v-if="pregunta.tipo == 1">
                                     <tr>
                                         <td width='20px'>A.</td>
-                                        <td  class="col-9">{{pregunta.a}} respuestas clien </td>
+                                        <td  class="col-9">{{pregunta.a}} </td>
                                         <td class="col-2">
                                             <input type="radio" :id="pregunta.id + '_a'" :name="'preg_' + pregunta.id " value='a' v-model='respuestas_clientes[pregunta.id]' required>
                                             
@@ -373,6 +375,7 @@
         }, 
         created() {
             this.aux_ruta = this.$parent.ruta;
+        
             Fire.$on('searching',() => {
                 let query = this.$parent.search;
                 axios.get(this.$parent.ruta + 'api/findMisInscripciones/' + query)

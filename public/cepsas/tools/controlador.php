@@ -106,7 +106,7 @@ function alumnocurso($id)
 		return false;		
 	}
 }
-function estudiante($id=null,$ced=null)
+function estudiante($id,$ced)
 {
 	$db = new Conexion();
 	$db->set_charset('utf8');
@@ -545,36 +545,36 @@ function numtoletras($xcifra)
  
 // END FUNCTION
  
-function subfijo($xx)
-{ // esta función regresa un subfijo para la cifra
-    $xx = trim($xx);
-    $xstrlen = strlen($xx);
-    if ($xstrlen == 1 || $xstrlen == 2 || $xstrlen == 3)
-        $xsub = "";
-    //
-    if ($xstrlen == 4 || $xstrlen == 5 || $xstrlen == 6)
-        $xsub = "MIL";
-    //
-    return $xsub;
-}
-function listado_general_xls(){
-	
-	$db = new Conexion();
-	$db->set_charset('utf8');
-	
-	$sql = 'select alumno.id, alumno.cedula,  alumno.lugar_expedicion, alumno.nombre1, alumno.nombre2, alumno.apellido1, alumno.apellido2, alumno.telefono, alumno.email, alumno.fecha_crea, empresa.empresa, empresa.nit_empresa, empresa.telefono_empresa, cursos.curso, alumnocurso.dia, alumnocurso.mes, alumnocurso.año, alumnocurso.estado
-from alumno 
-left join alumnocurso 
-     on alumno.id = alumnocurso.id_alumno
-left join cursos
-	 on alumnocurso.id_curso = cursos.id
-left join empresa
-     on empresa.id = alumno.id_empresa';
-	$consulta = $db->query($sql);
-	$result = mysqli_num_rows($consulta);
-	if($result > 0)
-		return $consulta;
-	else
-		return false;
-}
+	function subfijo($xx)
+	{ // esta función regresa un subfijo para la cifra
+		$xx = trim($xx);
+		$xstrlen = strlen($xx);
+		if ($xstrlen == 1 || $xstrlen == 2 || $xstrlen == 3)
+			$xsub = "";
+		//
+		if ($xstrlen == 4 || $xstrlen == 5 || $xstrlen == 6)
+			$xsub = "MIL";
+		//
+		return $xsub;
+	}
+	function listado_general_xls(){
+		
+		$db = new Conexion();
+		$db->set_charset('utf8');
+		
+		$sql = 'select alumno.id, alumno.cedula,  alumno.lugar_expedicion, alumno.nombre1, alumno.nombre2, alumno.apellido1, alumno.apellido2, alumno.telefono, alumno.email, alumno.fecha_crea, empresa.empresa, empresa.nit_empresa, empresa.telefono_empresa, cursos.curso, alumnocurso.dia, alumnocurso.mes, alumnocurso.año, alumnocurso.estado
+	from alumno 
+	left join alumnocurso 
+			on alumno.id = alumnocurso.id_alumno
+	left join cursos
+		on alumnocurso.id_curso = cursos.id
+	left join empresa
+			on empresa.id = alumno.id_empresa';
+		$consulta = $db->query($sql);
+		$result = mysqli_num_rows($consulta);
+		if($result > 0)
+			return $consulta;
+		else
+			return false;
+	}
 ?>

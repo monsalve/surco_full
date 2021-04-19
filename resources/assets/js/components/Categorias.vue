@@ -4,10 +4,10 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Usuarios</h3>
+                        <h3 class="card-title">Categorias</h3>
 
                         <div class="card-tools">
-                             <button class="btn btn-success" @click="newModal">Empresa <i class="fas fa-user-plus fa-fw"></i></button>
+                             <button class="btn btn-success" @click="newModal">Empresa <i class="fas fa-categoria-plus fa-fw"></i></button>
                         </div>
                     </div>
                     <!-- /.card-header -->
@@ -19,23 +19,24 @@
                             <tbody>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Empresa</th>                                   
+                                    <th>Categoria</th>
                                     <th>Registrado el</th>
                                     <th>Modificado el</th>
+                                    <th>Opciones</th>
                                 </tr>
-                                <tr v-for="user in users.data" :key="user.id">
-                                    <td>{{user.id}}</td>
+                                <tr v-for="categoria in categorias.data" :key="categoria.id">
+                                    <td>{{categoria.id}}</td>
                                     
-                                    <td>{{user.email}}</td>
+                                    <td>{{categoria.categoria}}</td>
                                     
-                                    <td>{{user.created_at | myDate}}</td>
-                                    <td>{{user.update_at | myDate}}</td>
+                                    <td>{{categoria.created_at | myDate}}</td>
+                                    <td>{{categoria.update_at | myDate}}</td>
                                     <td>
-                                        <a href="#" @click="editModal(user)">
+                                        <a href="#" @click="editModal(categoria)">
                                             <i class="fa fa-edit blue"></i>
                                         </a>
                                         /
-                                        <a href="#" @click="deleteUser(user.id)">
+                                        <a href="#" @click="deleteCategoria(categoria.id)">
                                             <i class="fa fa-trash red"></i>
                                         </a>
 
@@ -46,7 +47,7 @@
                     </div>
                     <!-- /.card-body -->
                     <div class="card-footer">
-                        <pagination :data="users" @pagination-change-page="getResults"></pagination>
+                        <pagination :data="categorias" @pagination-change-page="getResults"></pagination>
                     </div>
                 </div>
             <!-- /.card -->
@@ -68,47 +69,14 @@
                         <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form @submit.prevent="editmode ? updateUser() : createUser()">
+                    <form @submit.prevent="editmode ? updateCategoria() : createCategoria()">
                         <div class="modal-body">
                             <div class="form-group">
-                                <input v-model="form.name" type="text" name="name"
-                                    placeholder="Nombre"
-                                    class="form-control" :class="{ 'is-invalid': form.errors.has('name') }">
-                                <has-error :form="form" field="name"></has-error>
+                                <input v-model="form.categoria" type="text" categoria="categoria"
+                                    placeholder="Categoria"
+                                    class="form-control" :class="{ 'is-invalid': form.errors.has('categoria') }">
+                                <has-error :form="form" field="categoria"></has-error>
                             </div>
-
-                            <div class="form-group">
-                                <input v-model="form.email" type="email" name="email"
-                                    placeholder="Correo"
-                                    class="form-control" :class="{ 'is-invalid': form.errors.has('email') }">
-                                <has-error :form="form" field="email"></has-error>
-                            </div>
-
-                            <div class="form-group">
-                                <textarea v-model="form.bio" name="bio" id="bio"
-                                placeholder="Informacón (Opcional)"
-                                class="form-control" :class="{ 'is-invalid': form.errors.has('bio') }"></textarea>
-                                <has-error :form="form" field="bio"></has-error>
-                            </div>
-
-
-                            <div class="form-group">
-                                <select name="type" v-model="form.type" id="type" class="form-control" :class="{ 'is-invalid': form.errors.has('type') }">
-                                    <option value="">Selecione el rol de usuario</option>
-                                    <option value="admin">Administrador</option>
-                                    <option value="user">Estudiante</option>
-                                    <option value="author">Tutor</option>
-                                </select>
-                                <has-error :form="form" field="type"></has-error>
-                            </div>
-
-                            <div class="form-group">
-                                <label for='password'>Clave</label>
-                                <input v-model="form.password" type="password" name="password" id="password"
-                                class="form-control" :class="{ 'is-invalid': form.errors.has('password') }">
-                                <has-error :form="form" field="password"></has-error>
-                            </div>
-
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
@@ -129,29 +97,24 @@
         data() {
             return {
                 editmode: false,
-                users : {},
+                categorias : {},
                 form: new Form({
-                    id:'',
-                    name : '',
-                    email: '',
-                    password: '',
-                    type: '',
-                    bio: '',
-                    photo: ''
+                  id:'',
+									categoria : ''
                 })
             }
         },
         methods: {
             getResults(page = 1) {
-                axios.get('api/user?page=' + page)
+                axios.get(this.$parent.ruta + 'api/categoria?page=' + page)
                 .then(response => {
-                    this.users = response.data;
+                    this.categorias = response.data;
                 });
             },
-            updateUser(){
+            updateCategoria(){
                 this.$Progress.start();
                 // console.log('Editing data');
-                this.form.put('api/user/'+this.form.id)
+                this.form.put(this.$parent.ruta + 'api/categoria/'+this.form.id)
                 .then(() => {
                     // success
                     $('#addNew').modal('hide');
@@ -168,60 +131,60 @@
                 });
 
             },
-            editModal(user){
+            editModal(categoria){
                 this.editmode = true;
                 this.form.reset();
                 $('#addNew').modal('show');
-                this.form.fill(user);
+                this.form.fill(categoria);
             },
             newModal(){
                 this.editmode = false;
                 this.form.reset();
                 $('#addNew').modal('show');
             },
-            deleteUser(id){
+            deleteCategoria(id){
                 swal({
-                    title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
-                    type: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!'
-                    }).then((result) => {
-
-                        // Send request to the server
-                         if (result.value) {
-                                this.form.delete('api/user/'+id).then(()=>{
-                                        swal(
-                                        'Deleted!',
-                                        'Your file has been deleted.',
-                                        'success'
-                                        )
-                                    Fire.$emit('AfterCreate');
-                                }).catch(()=> {
-                                    swal("Failed!", "There was something wronge.", "warning");
-                                });
-                         }
-                    })
+									title: 'Are you sure?',
+									text: "You won't be able to revert this!",
+									type: 'warning',
+									showCancelButton: true,
+									confirmButtonColor: '#3085d6',
+									cancelButtonColor: '#d33',
+									confirmButtonText: 'Yes, delete it!'
+								}).then((result) => {
+									if (result.value) {
+										this.form.delete(this.$parent.ruta + 'api/categoria/'+id).then(()=>{
+											swal(
+											'Deleted!',
+											'Your file has been deleted.',
+											'success'
+											)
+											Fire.$emit('AfterCreate');
+										}).catch(()=> {
+											swal("Failed!", "There was something wronge.", "warning");
+										});
+									}
+								})
             },
-            loadUsers(){
+            loadCategorias(){
                 if(this.$gate.isAdminOrAuthor()){
-                    axios.get("api/user").then(({ data }) => (this.users = data));
+                    axios.get(this.$parent.ruta +"api/categoria").then(({ data }) => (
+                        this.categorias = data
+                    ));
                 }
             },
 
-            createUser(){
+            createCategoria(){
                 this.$Progress.start();
 
-                this.form.post('api/user')
+                this.form.post(this.$parent.ruta + 'api/categoria')
                 .then(()=>{
                     Fire.$emit('AfterCreate');
                     $('#addNew').modal('hide')
 
                     toast({
                         type: 'success',
-                        title: 'User Created in successfully'
+                        title: 'Categoria Created in successfully'
                         })
                     this.$Progress.finish();
 
@@ -234,19 +197,19 @@
         created() {
             Fire.$on('searching',() => {
                 let query = this.$parent.search;
-                axios.get('api/findUser?q=' + query)
+                axios.get('api/findCategoria?q=' + query)
                 .then((data) => {
-                    this.users = data.data
+                    this.categorias = data.data
                 })
                 .catch(() => {
 
                 })
             })
-           this.loadUsers();
+           this.loadCategorias();
            Fire.$on('AfterCreate',() => {
-               this.loadUsers();
+               this.loadCategorias();
            });
-        //    setInterval(() => this.loadUsers(), 3000);
+        //    setInterval(() => this.loadCategorias(), 3000);
         }
 
     }
